@@ -214,6 +214,23 @@
     }
   }
 
+  // Welcome Modal Controls for Dashboard Page
+  window.openWelcomeModal = function() {
+    const modal = document.getElementById('welcome-modal');
+    if (modal) modal.classList.add('is-active');
+  };
+
+  window.closeWelcomeModal = function() {
+    const modal = document.getElementById('welcome-modal');
+    if (modal) modal.classList.remove('is-active');
+  };
+
+  if (pageName === 'dashboard.html') {
+    setTimeout(() => {
+      window.openWelcomeModal();
+    }, 350);
+  }
+
   // Password Visibility Toggle Function
   window.togglePasswordVisibility = function (inputId, btn) {
     const input = document.getElementById(inputId);
