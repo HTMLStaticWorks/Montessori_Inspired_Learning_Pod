@@ -12,33 +12,27 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
         rel="stylesheet">
+    <link rel="icon" type="image/png" href="logo.png">
     <link rel="stylesheet" href="styles.css">
     <script>
         (function () {
             try {
-                localStorage.removeItem('lo-rtl');
-                localStorage.setItem('lo-theme', 'light');
+                var t = localStorage.getItem('lo-theme');
+                if (t) document.documentElement.dataset.theme = t;
+                var r = localStorage.getItem('lo-rtl');
+                if (r === 'rtl') document.documentElement.setAttribute('dir', 'rtl');
+                else if (r === 'ltr') document.documentElement.setAttribute('dir', 'ltr');
             } catch (e) { }
-            document.documentElement.dataset.theme = 'light';
-            document.documentElement.setAttribute('dir', 'ltr');
         })();
     </script>
 </head>
 
 <body>
-    <!-- Announcement Bar -->
-    <div class="top" id="top-announcement">
-        <div class="container in">
-            <span>🌿 Academic Session 2026–27 · Admissions Now Open</span>
-            <span>Admissions Desk: +91 90000 00000 · hello@littleoakmontessori.in</span>
-        </div>
-    </div>
-
     <!-- Main Navigation Header -->
     <header class="header" id="main-header">
         <div class="container nav">
             <a class="logo" href="index.html" id="brand-logo">
-                <span class="mark">L</span>
+                <img src="logo.png" alt="Little Oak Montessori" class="logo-img">
                 <span>LITTLE OAK<br><small>MONTESSORI</small></span>
             </a>
             <nav class="links" id="nav">
@@ -331,7 +325,7 @@
         <div class="container footerGrid">
             <div>
                 <div class="logo">
-                    <span class="mark" style="background:#ffffff; color:#365343;">L</span>
+                    <img src="logo.png" alt="Little Oak Montessori" class="logo-img">
                     <span>LITTLE OAK<br><small>MONTESSORI</small></span>
                 </div>
                 <p style="margin-top: 14px;">A warm, prepared Montessori environment where children learn through
@@ -393,6 +387,7 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="theme-rtl.js"></script>
 </body>
 
 </html>

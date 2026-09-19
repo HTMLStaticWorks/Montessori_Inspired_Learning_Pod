@@ -1,48 +1,7 @@
-// Clean reset stored theme & rtl in browser storage
-try {
-  localStorage.removeItem('lo-rtl');
-  localStorage.setItem('lo-theme', 'light');
-} catch (e) { }
+(function () {
+  'use strict';
 
-document.documentElement.dataset.theme = 'light';
-document.documentElement.setAttribute('dir', 'ltr');
-
-function updateThemeBtns() {
-  const isDark = document.documentElement.dataset.theme === 'dark';
-  document.querySelectorAll('[data-theme]').forEach(btn => {
-    btn.innerHTML = isDark ? '<span>☀️</span> <span>Light</span>' : '<span>🌙</span> <span>Dark</span>';
-    btn.setAttribute('title', isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode');
-    btn.setAttribute('aria-label', isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode');
-    btn.setAttribute('aria-pressed', isDark ? 'true' : 'false');
-    btn.classList.toggle('active', isDark);
-  });
-}
-
-document.querySelectorAll('[data-theme]').forEach(btn => {
-  btn.onclick = (e) => {
-    if (e) e.preventDefault();
-    const isDark = document.documentElement.dataset.theme === 'dark';
-    const nextTheme = isDark ? 'light' : 'dark';
-    document.documentElement.dataset.theme = nextTheme;
-    try {
-      localStorage.setItem('lo-theme', nextTheme);
-    } catch (err) { }
-    updateThemeBtns();
-    window.dispatchEvent(new CustomEvent('themechange', { detail: { theme: nextTheme } }));
-  };
-});
-updateThemeBtns();
-
-// RTL Direction toggle - Temporarily Blocked as requested
-document.querySelectorAll('[data-rtl]').forEach(btn => {
-  btn.style.display = 'none'; // Hide RTL button
-  btn.onclick = (e) => {
-    if (e) e.preventDefault();
-    document.documentElement.setAttribute('dir', 'ltr');
-  };
-});
-
-// Mobile Hamburger Toggle & Portal Sidebar Drawer
+  // Mobile Hamburger Toggle & Portal Sidebar Drawer
 document.querySelectorAll('[data-menu], .portalMenu').forEach(btn => {
   btn.onclick = (e) => {
     e.stopPropagation();
@@ -124,9 +83,9 @@ document.querySelectorAll('form[data-chat-form]').forEach(form => {
   };
 });
 
-// Back to Top Button
+// Back to Top Button for All Pages
 let backBtn = document.getElementById('backToTop');
-if (!backBtn && !document.body.classList.contains('portal')) {
+if (!backBtn) {
   backBtn = document.createElement('button');
   backBtn.id = 'backToTop';
   backBtn.className = 'back-to-top';
@@ -136,15 +95,19 @@ if (!backBtn && !document.body.classList.contains('portal')) {
 }
 
 if (backBtn) {
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 120) {
+  const handleScroll = () => {
+    if (window.scrollY > 100 || document.documentElement.scrollTop > 100) {
       backBtn.classList.add('visible');
     } else {
       backBtn.classList.remove('visible');
     }
-  });
+  };
 
-  backBtn.onclick = () => {
+  window.addEventListener('scroll', handleScroll);
+  handleScroll();
+
+  backBtn.onclick = (e) => {
+    if (e) e.preventDefault();
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 }
@@ -160,4 +123,96 @@ document.querySelectorAll('form[data-demo]').forEach(form => {
     else alert('Action saved successfully!');
   };
 });
-}) ();
+
+// Gallery Page Pagination (15 items per page)
+const photoGrid = document.querySelector('.photoGrid');
+if (photoGrid) {
+  const cards = Array.from(photoGrid.querySelectorAll('.photoCard'));
+  const itemsPerPage = 15;
+  const totalPages = Math.ceil(cards.length / itemsPerPage);
+
+  if (totalPages > 1) {
+    let paginationContainer = document.getElementById('gallery-pagination');
+    if (!paginationContainer) {
+      paginationContainer = document.createElement('div');
+      paginationContainer.id = 'gallery-pagination';
+      paginationContainer.className = 'pagination';
+      photoGrid.parentNode.appendChild(paginationContainer);
+    }
+
+    const showPage = (page) => {
+      cards.forEach((card, index) => {
+        const start = (page - 1) * itemsPerPage;
+        const end = start + itemsPerPage;
+        if (index >= start && index < end) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      if (paginationContainer) {
+        paginationContainer.querySelectorAll('.page-btn[data-page]').forEach(btn => {
+          if (parseInt(btn.dataset.page, 10) === page) {
+            btn.classList.add('active');
+          } else {
+            btn.classList.remove('active');
+          }
+        });
+      }
+    };
+
+    paginationContainer.innerHTML = '';
+
+    // Prev Button
+    const prevBtn = document.createElement('button');
+    prevBtn.className = 'page-btn page-nav';
+    prevBtn.innerHTML = '← Prev';
+    prevBtn.setAttribute('aria-label', 'Previous Page');
+    prevBtn.onclick = () => {
+      const activeBtn = paginationContainer.querySelector('.page-btn.active[data-page]');
+      const currPage = activeBtn ? parseInt(activeBtn.dataset.page, 10) : 1;
+      if (currPage > 1) {
+        showPage(currPage - 1);
+        const gridTop = photoGrid.getBoundingClientRect().top + window.scrollY - 100;
+        if (window.scrollY > gridTop) window.scrollTo({ top: gridTop, behavior: 'smooth' });
+      }
+    };
+    paginationContainer.appendChild(prevBtn);
+
+    // Page Numbers
+    for (let i = 1; i <= totalPages; i++) {
+      const btn = document.createElement('button');
+      btn.className = `page-btn ${i === 1 ? 'active' : ''}`;
+      btn.dataset.page = i;
+      btn.textContent = i;
+      btn.setAttribute('aria-label', `Page ${i}`);
+      btn.onclick = () => {
+        showPage(i);
+        const gridTop = photoGrid.getBoundingClientRect().top + window.scrollY - 100;
+        if (window.scrollY > gridTop) window.scrollTo({ top: gridTop, behavior: 'smooth' });
+      };
+      paginationContainer.appendChild(btn);
+    }
+
+    // Next Button
+    const nextBtn = document.createElement('button');
+    nextBtn.className = 'page-btn page-nav';
+    nextBtn.innerHTML = 'Next →';
+    nextBtn.setAttribute('aria-label', 'Next Page');
+    nextBtn.onclick = () => {
+      const activeBtn = paginationContainer.querySelector('.page-btn.active[data-page]');
+      const currPage = activeBtn ? parseInt(activeBtn.dataset.page, 10) : 1;
+      if (currPage < totalPages) {
+        showPage(currPage + 1);
+        const gridTop = photoGrid.getBoundingClientRect().top + window.scrollY - 100;
+        if (window.scrollY > gridTop) window.scrollTo({ top: gridTop, behavior: 'smooth' });
+      }
+    };
+    paginationContainer.appendChild(nextBtn);
+
+    // Show initial page 1
+    showPage(1);
+  }
+}
+})();
