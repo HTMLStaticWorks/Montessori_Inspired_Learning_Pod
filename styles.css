@@ -252,7 +252,11 @@ img {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-.toggle, .hamb, .toggle-rtl {
+.toggle, .toggle-rtl {
+    display: none !important;
+}
+
+.hamb {
     height: 38px;
     padding: 0 12px;
     border: 1px solid var(--line);
