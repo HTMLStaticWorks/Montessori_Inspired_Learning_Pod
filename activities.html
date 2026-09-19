@@ -1,0 +1,206 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Activities & Attendance · Parent Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>(function(){var t=localStorage.getItem('lo-theme');if(t)document.documentElement.dataset.theme=t;var r=localStorage.getItem('lo-rtl');if(r==='rtl')document.documentElement.setAttribute('dir','rtl');else if(r==='ltr')document.documentElement.setAttribute('dir','ltr');})();</script>
+</head>
+
+<body class="portal">
+    <div class="portalShell">
+        <aside class="side">
+            <a class="logo" href="dashboard.html">
+                <span class="mark">L</span>
+                <span>LITTLE OAK<br><small>PARENT PORTAL</small></span>
+            </a>
+            <a href="dashboard.html">Overview</a>
+            <a href="child.html">My Child</a>
+            <a href="activities.html" class="active">Activities & Attendance</a>
+            <a href="progress.html">Reports & Progress</a>
+            <a href="calendar.html">Calendar & Documents</a>
+            <a href="finance.html">Fees, Payments & Messages</a>
+            <a href="profile.html">Profile</a>
+            <div class="sideBottom">
+                <a class="btn" style="width:100%;background:#fff;color:#26342d" href="index.html">Back to Website</a>
+            </div>
+        </aside>
+        <main class="portalMain">
+            <div class="portalTop">
+                <button class="hamb portalMenu" data-menu=".side" aria-label="Toggle Sidebar Navigation">☰</button>
+                <b style="font:21px Georgia">Activities & Attendance Log</b>
+                <span class="spacer"></span>
+                <button class="toggle-rtl" data-rtl title="Toggle RTL/LTR">RTL</button>
+                <button class="toggle" data-theme>◐</button>
+                <span class="avatar">AS</span>
+            </div>
+            <div class="portalContent">
+                <div class="welcome">
+                    <div>
+                        <div class="eyebrow">Work Cycle Observation Feed</div>
+                        <h1 style="font-size:42px;margin:4px 0 8px;">Emma's Daily Activities</h1>
+                        <p style="color:var(--muted)">Track Montessori presentations, independent work cycles, and attendance.</p>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric">
+                        <span class="num">ATTENDANCE RATE</span>
+                        <strong>98%</strong>
+                        <span>42 of 43 days present</span>
+                    </div>
+                    <div class="metric">
+                        <span class="num">WORK CYCLE TODAY</span>
+                        <strong>4</strong>
+                        <span>Activities completed</span>
+                    </div>
+                    <div class="metric">
+                        <span class="num">TOTAL PRESENTATIONS</span>
+                        <strong>34</strong>
+                        <span>This term</span>
+                    </div>
+                </div>
+
+                <!-- Filterable Activity Log -->
+                <div class="dash" style="margin-top:24px;">
+                    <div class="pCard" style="grid-column: 1 / -1;">
+                        <div class="eyebrow">Filter Area</div>
+                        <h2 style="font-size:26px;margin:8px 0 16px;">Daily Activity Feed</h2>
+
+                        <div class="portal-tabs">
+                            <button class="portal-tab active" data-category="all">All Areas</button>
+                            <button class="portal-tab" data-category="practical">Practical Life</button>
+                            <button class="portal-tab" data-category="sensorial">Sensorial</button>
+                            <button class="portal-tab" data-category="language">Language</button>
+                            <button class="portal-tab" data-category="math">Mathematics</button>
+                            <button class="portal-tab" data-category="culture">Cultural & Science</button>
+                        </div>
+
+                        <div class="activity-list">
+                            <div class="activity" data-item-category="practical">
+                                <div class="check">✓</div>
+                                <div>
+                                    <b>Practical Life · Pitcher Pouring</b> <span class="tag tag-success">Mastered</span>
+                                    <small style="display:block;color:var(--muted);margin-top:2px;">Completed sequence independently without spills.</small>
+                                </div>
+                                <span class="badge">Today · 09:20 AM</span>
+                            </div>
+
+                            <div class="activity" data-item-category="language">
+                                <div class="check">✓</div>
+                                <div>
+                                    <b>Language · Movable Alphabet</b> <span class="tag tag-info">Practicing</span>
+                                    <small style="display:block;color:var(--muted);margin-top:2px;">Built 3-letter phonetic words ("cat", "sun", "mat").</small>
+                                </div>
+                                <span class="badge">Today · 10:15 AM</span>
+                            </div>
+
+                            <div class="activity" data-item-category="sensorial">
+                                <div class="check">✓</div>
+                                <div>
+                                    <b>Sensorial · Pink Tower & Broad Stair</b> <span class="tag tag-success">Mastered</span>
+                                    <small style="display:block;color:var(--muted);margin-top:2px;">Combined dimensions presentation with precise concentration.</small>
+                                </div>
+                                <span class="badge">Today · 11:05 AM</span>
+                            </div>
+
+                            <div class="activity" data-item-category="math">
+                                <div class="check">✓</div>
+                                <div>
+                                    <b>Mathematics · Spindle Box & Zero Concept</b> <span class="tag tag-info">Practicing</span>
+                                    <small style="display:block;color:var(--muted);margin-top:2px;">Counted wooden spindles 0 through 9 into compartments.</small>
+                                </div>
+                                <span class="badge">Yesterday</span>
+                            </div>
+
+                            <div class="activity" data-item-category="culture">
+                                <div class="check">✓</div>
+                                <div>
+                                    <b>Cultural & Science · Botany Cabinet (Leaf Shapes)</b> <span class="tag tag-muted">Presented</span>
+                                    <small style="display:block;color:var(--muted);margin-top:2px;">Explored linear, cordate, and orbicular leaf cutouts.</small>
+                                </div>
+                                <span class="badge">17 Sep 2026</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Attendance Log & Absence Form -->
+                <div class="dash">
+                    <div class="pCard">
+                        <div class="eyebrow">Attendance Calendar</div>
+                        <h2 style="font-size:26px;margin:8px 0 16px;">September 2026 Attendance</h2>
+                        <div class="portal-table-wrap">
+                            <table class="portal-table">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Status</th>
+                                        <th>Check-In</th>
+                                        <th>Notes</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Wed, Sep 19</td>
+                                        <td><span class="tag tag-success">Present</span></td>
+                                        <td>08:42 AM</td>
+                                        <td>On time</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tue, Sep 18</td>
+                                        <td><span class="tag tag-success">Present</span></td>
+                                        <td>08:45 AM</td>
+                                        <td>On time</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mon, Sep 17</td>
+                                        <td><span class="tag tag-warning">Late</span></td>
+                                        <td>09:12 AM</td>
+                                        <td>Doctor Appointment</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Fri, Sep 14</td>
+                                        <td><span class="tag tag-success">Present</span></td>
+                                        <td>08:40 AM</td>
+                                        <td>On time</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="pCard">
+                        <div class="eyebrow">Parent Action</div>
+                        <h3>Report Absence or Late Arrival</h3>
+                        <p style="font-size:13.5px;color:var(--muted);">Notify the lead guide in advance if your child will be absent or arriving late.</p>
+                        <form class="form" data-demo style="margin-top:14px;">
+                            <label>Date
+                                <input type="date" required value="2026-09-20">
+                            </label>
+                            <label>Reason
+                                <select required>
+                                    <option value="">Select Reason</option>
+                                    <option value="illness">Illness / Sick Day</option>
+                                    <option value="doctor">Medical Appointment</option>
+                                    <option value="family">Family Event / Travel</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </label>
+                            <label>Additional Details
+                                <textarea style="min-height:70px;" placeholder="Optional notes for guide Maria..."></textarea>
+                            </label>
+                            <button class="btn" style="width:100%;margin-top:6px;">Submit Absence Notice</button>
+                            <div class="note" style="font-size:12px;color:var(--sage);margin-top:6px;"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

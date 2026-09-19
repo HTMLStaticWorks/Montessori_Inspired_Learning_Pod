@@ -1,0 +1,172 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Fees, Payments & Messages · Parent Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>(function(){var t=localStorage.getItem('lo-theme');if(t)document.documentElement.dataset.theme=t;var r=localStorage.getItem('lo-rtl');if(r==='rtl')document.documentElement.setAttribute('dir','rtl');else if(r==='ltr')document.documentElement.setAttribute('dir','ltr');})();</script>
+</head>
+
+<body class="portal">
+    <div class="portalShell">
+        <aside class="side">
+            <a class="logo" href="dashboard.html">
+                <span class="mark">L</span>
+                <span>LITTLE OAK<br><small>PARENT PORTAL</small></span>
+            </a>
+            <a href="dashboard.html">Overview</a>
+            <a href="child.html">My Child</a>
+            <a href="activities.html">Activities & Attendance</a>
+            <a href="progress.html">Reports & Progress</a>
+            <a href="calendar.html">Calendar & Documents</a>
+            <a href="finance.html" class="active">Fees, Payments & Messages</a>
+            <a href="profile.html">Profile</a>
+            <div class="sideBottom">
+                <a class="btn" style="width:100%;background:#fff;color:#26342d" href="index.html">Back to Website</a>
+            </div>
+        </aside>
+        <main class="portalMain">
+            <div class="portalTop">
+                <button class="hamb portalMenu" data-menu=".side" aria-label="Toggle Sidebar Navigation">☰</button>
+                <b style="font:21px Georgia">Fees, Billing & Messaging</b>
+                <span class="spacer"></span>
+                <button class="toggle-rtl" data-rtl title="Toggle RTL/LTR">RTL</button>
+                <button class="toggle" data-theme>◐</button>
+                <span class="avatar">AS</span>
+            </div>
+            <div class="portalContent">
+                <div class="welcome">
+                    <div>
+                        <div class="eyebrow">Financial Statement & Direct Communication</div>
+                        <h1 style="font-size:42px;margin:4px 0 8px;">Fees & Messages Hub</h1>
+                        <p style="color:var(--muted)">Manage tuition invoices, online payments, and communicate directly with guides.</p>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric">
+                        <span class="num">CURRENT BALANCE</span>
+                        <strong>$0.00</strong>
+                        <span>Account in good standing</span>
+                    </div>
+                    <div class="metric">
+                        <span class="num">UPCOMING TUITION</span>
+                        <strong>$1,250</strong>
+                        <span>Due Oct 1, 2026 (Q4)</span>
+                    </div>
+                    <div class="metric">
+                        <span class="num">ACTIVE MESSAGES</span>
+                        <strong>1</strong>
+                        <span>With Guide Maria</span>
+                    </div>
+                </div>
+
+                <!-- Billing History & Online Payment -->
+                <div class="dash" style="margin-top:24px;">
+                    <div class="pCard">
+                        <div class="eyebrow">Invoices & Statements</div>
+                        <h2 style="font-size:26px;margin:8px 0 16px;">Billing & Payment History</h2>
+                        <div class="portal-table-wrap">
+                            <table class="portal-table">
+                                <thead>
+                                    <tr>
+                                        <th>Invoice #</th>
+                                        <th>Description</th>
+                                        <th>Amount</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><b>#INV-2026-09</b></td>
+                                        <td>Q3 Fall Tuition (Sep - Nov)</td>
+                                        <td>$1,250.00</td>
+                                        <td><span class="tag tag-success">Paid</span></td>
+                                        <td><button class="btn soft" onclick="alert('Downloading Receipt #INV-2026-09 PDF...')">Receipt</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>#INV-2026-04</b></td>
+                                        <td>Annual Materials & Art Supply Fee</td>
+                                        <td>$150.00</td>
+                                        <td><span class="tag tag-success">Paid</span></td>
+                                        <td><button class="btn soft" onclick="alert('Downloading Receipt #INV-2026-04 PDF...')">Receipt</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>#INV-2026-01</b></td>
+                                        <td>Q2 Summer Tuition (Jun - Aug)</td>
+                                        <td>$1,250.00</td>
+                                        <td><span class="tag tag-success">Paid</span></td>
+                                        <td><button class="btn soft" onclick="alert('Downloading Receipt #INV-2026-01 PDF...')">Receipt</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Make Online Payment Card -->
+                    <div class="pCard">
+                        <div class="eyebrow">Quick Payment</div>
+                        <h3>Upcoming Payment Simulation</h3>
+                        <p style="font-size:13.5px;color:var(--muted);">Advance payment for Q4 Winter Tuition ($1,250.00 due Oct 1).</p>
+                        <form class="form" data-demo style="margin-top:14px;">
+                            <label>Payment Method
+                                <select required>
+                                    <option value="card">Visa ending in *4821 (Saved)</option>
+                                    <option value="ach">Bank Auto-Debit ACH (*9012)</option>
+                                    <option value="new">Add New Credit / Debit Card</option>
+                                </select>
+                            </label>
+                            <label>Amount to Pay
+                                <input type="text" value="$1,250.00" readonly>
+                            </label>
+                            <button class="btn" style="width:100%;margin-top:6px;">💳 Pay Now (Demo)</button>
+                            <div class="note" style="font-size:12px;color:var(--sage);margin-top:6px;"></div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Guide Direct Messaging Interface -->
+                <div class="dash">
+                    <div class="pCard" style="grid-column: 1 / -1;">
+                        <div class="eyebrow">Direct Communications</div>
+                        <h2 style="font-size:26px;margin:8px 0 16px;">Message Lead Guide</h2>
+
+                        <div class="chat-container">
+                            <div class="chat-header">
+                                <span class="avatar" style="width:36px;height:36px;font-size:14px;">MM</span>
+                                <div>
+                                    <b style="font-size:15px;display:block;">Maria Montessori</b>
+                                    <span style="font-size:12px;color:var(--muted);">Lead Guide · Casa 1 Community</span>
+                                </div>
+                            </div>
+                            <div class="chat-messages">
+                                <div class="chat-bubble received">
+                                    Good morning Ananya! Just letting you know Emma completed her pouring presentation independently today and showed great pride in cleaning up.
+                                    <span class="chat-time">Yesterday · 09:45 AM</span>
+                                </div>
+                                <div class="chat-bubble sent">
+                                    Thank you so much Maria! That is wonderful to hear. She was telling us about the water pouring work yesterday evening.
+                                    <span class="chat-time">Yesterday · 10:15 AM</span>
+                                </div>
+                                <div class="chat-bubble received">
+                                    You're very welcome! Please feel free to reach out if you have any questions before our parent conversation next week.
+                                    <span class="chat-time">Today · 08:30 AM</span>
+                                </div>
+                            </div>
+                            <form class="chat-input-bar" data-chat-form>
+                                <input type="text" placeholder="Type a message to Maria..." required style="flex:1;">
+                                <button class="btn" type="submit">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

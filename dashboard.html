@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Parent Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>(function(){var t=localStorage.getItem('lo-theme');if(t)document.documentElement.dataset.theme=t;var r=localStorage.getItem('lo-rtl');if(r==='rtl')document.documentElement.setAttribute('dir','rtl');else if(r==='ltr')document.documentElement.setAttribute('dir','ltr');})();</script>
+</head>
+
+<body class="portal">
+    <div class="portalShell">
+        <aside class="side"><a class="logo" href="dashboard.html"><span class="mark">L</span><span>LITTLE
+                    OAK<br><small>PARENT PORTAL</small></span></a><a class="active" href="dashboard.html">Overview</a><a
+                href="child.html">My Child</a><a href="activities.html">Activities & Attendance</a><a
+                href="progress.html">Reports & Progress</a><a href="calendar.html">Calendar & Documents</a><a
+                href="finance.html">Fees, Payments & Messages</a><a href="profile.html">Profile</a>
+            <div class="sideBottom"><a class="btn" style="width:100%;background:#fff;color:#26342d"
+                    href="index.html">Back to Website</a></div>
+        </aside>
+        <main class="portalMain">
+            <div class="portalTop"><button class="hamb portalMenu" data-menu=".side" aria-label="Toggle Sidebar Navigation">☰</button><b style="font:21px Georgia">Parent
+                    Portal</b><span class="spacer"></span><button class="toggle-rtl" data-rtl
+                    title="Toggle RTL/LTR">RTL</button><button class="toggle" data-theme>◐</button><span
+                    class="avatar">AS</span></div>
+            <div class="portalContent">
+                <div class="welcome">
+                    <div>
+                        <div class="eyebrow">Wednesday · 19 September 2026</div>
+                        <h1 style="font-size:48px">Good morning, Ananya.</h1>
+                        <p>Here is a calm snapshot of Emma's school day.</p>
+                    </div>
+                </div>
+                <div class="metrics">
+                    <div class="metric"><span class="num">ATTENDANCE</span><strong>98%</strong><span>Present this
+                            term</span></div>
+                    <div class="metric"><span class="num">WORK CYCLE</span><strong>4</strong><span>Activities
+                            today</span></div>
+                    <div class="metric"><span class="num">REPORT</span><strong>Sep</strong><span>Latest
+                            observation</span></div>
+                </div>
+                <div class="dash">
+                    <div class="pCard">
+                        <div class="eyebrow">Today's activities</div>
+                        <h2 style="font-size:30px">Emma · Casa</h2>
+                        <div class="activity">
+                            <div class="check">✓</div>
+                            <div><b>Practical Life · Pouring</b><small
+                                    style="display:block;color:var(--muted)">Completed independently</small></div><span
+                                class="badge">09:20</span>
+                        </div>
+                        <div class="activity">
+                            <div class="check">✓</div>
+                            <div><b>Language · Movable Alphabet</b><small style="display:block;color:var(--muted)">Word
+                                    building</small></div><span class="badge">10:15</span>
+                        </div>
+                        <div class="activity">
+                            <div class="check">✓</div>
+                            <div><b>Sensorial · Pink Tower</b><small style="display:block;color:var(--muted)">Repeated
+                                    presentation</small></div><span class="badge">11:05</span>
+                        </div><a class="btn soft" href="activities.html">View All Activities</a>
+                    </div>
+                    <div class="pCard">
+                        <div class="eyebrow">Teacher note</div>
+                        <h3>“Emma returned to the pouring work and completed the sequence without help.”</h3>
+                        <p>— Maria, Lead Guide</p><a class="btn soft" href="progress.html">Open Report</a>
+                    </div>
+                </div>
+                <div class="dash">
+                    <div class="pCard">
+                        <div class="eyebrow">Progress snapshot</div>
+                        <h2 style="font-size:30px">Montessori areas</h2>
+                        <div style="margin:20px 0"><b>Practical Life</b>
+                            <div class="bar"><span style="width:82%"></span></div>
+                        </div>
+                        <div style="margin:20px 0"><b>Sensorial</b>
+                            <div class="bar"><span style="width:76%"></span></div>
+                        </div>
+                        <div style="margin:20px 0"><b>Language</b>
+                            <div class="bar"><span style="width:68%"></span></div>
+                        </div>
+                        <div style="margin:20px 0"><b>Mathematics</b>
+                            <div class="bar"><span style="width:63%"></span></div>
+                        </div>
+                    </div>
+                    <div class="pCard">
+                        <div class="eyebrow">Upcoming</div>
+                        <h3>Parent conversation</h3>
+                        <p>26 September · 3:30 PM</p>
+                        <h3>School holiday</h3>
+                        <p>30 September</p><a class="btn soft" href="calendar.html">Open Calendar</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

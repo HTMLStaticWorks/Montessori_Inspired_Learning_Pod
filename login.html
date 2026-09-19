@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Login · Little Oak Montessori</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>(function(){var t=localStorage.getItem('lo-theme');if(t)document.documentElement.dataset.theme=t;var r=localStorage.getItem('lo-rtl');if(r==='rtl')document.documentElement.setAttribute('dir','rtl');else if(r==='ltr')document.documentElement.setAttribute('dir','ltr');})();</script>
+</head>
+<body>
+    <div class="auth-wrapper">
+        <div class="auth-card">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+                <a class="logo" href="index.html" style="margin:0;">
+                    <span class="mark">L</span>
+                    <span>LITTLE OAK<br><small>MONTESSORI</small></span>
+                </a>
+                <div style="display:flex;gap:6px;">
+                    <button class="toggle-rtl" data-rtl title="Toggle RTL/LTR">RTL</button>
+                    <button class="toggle" data-theme>🌙</button>
+                </div>
+            </div>
+            <div class="auth-tabs">
+                <a href="login.html" class="auth-tab active">Log In</a>
+                <a href="signup.html" class="auth-tab">Sign Up</a>
+            </div>
+            <div class="eyebrow">Parent & Family Access</div>
+            <h1 style="font-size:36px;margin:10px 0 16px;">Welcome back</h1>
+            <p style="color:var(--muted);font-size:14px;margin-bottom:20px;">Access your child's progress, work cycle updates, and school calendar.</p>
+            <form class="form" onsubmit="event.preventDefault();location.href='dashboard.html'">
+                <label>Email Address
+                    <input type="email" value="parent@example.com" required placeholder="name@example.com">
+                </label>
+                <label>Password
+                    <input type="password" value="password" required placeholder="••••••••">
+                </label>
+                <div style="display:flex;justify-content:space-between;align-items:center;margin:6px 0 16px;">
+                    <label style="font-weight:normal;font-size:13px;display:flex;align-items:center;gap:6px;">
+                        <input type="checkbox" checked style="width:auto;margin:0;"> Remember me
+                    </label>
+                    <a href="#" style="font-size:13px;color:var(--sage);font-weight:700;">Forgot password?</a>
+                </div>
+                <button class="btn" style="width:100%;margin-top:6px;">Sign In to Portal</button>
+            </form>
+            <div style="text-align:center;margin-top:24px;border-top:1px solid var(--line);padding-top:18px;">
+                <a class="btn soft" href="index.html" style="width:100%;">← Back to Website</a>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

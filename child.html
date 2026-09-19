@@ -1,0 +1,158 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>My Child · Parent Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>(function(){var t=localStorage.getItem('lo-theme');if(t)document.documentElement.dataset.theme=t;var r=localStorage.getItem('lo-rtl');if(r==='rtl')document.documentElement.setAttribute('dir','rtl');else if(r==='ltr')document.documentElement.setAttribute('dir','ltr');})();</script>
+</head>
+
+<body class="portal">
+    <div class="portalShell">
+        <aside class="side">
+            <a class="logo" href="dashboard.html">
+                <span class="mark">L</span>
+                <span>LITTLE OAK<br><small>PARENT PORTAL</small></span>
+            </a>
+            <a href="dashboard.html">Overview</a>
+            <a href="child.html" class="active">My Child</a>
+            <a href="activities.html">Activities & Attendance</a>
+            <a href="progress.html">Reports & Progress</a>
+            <a href="calendar.html">Calendar & Documents</a>
+            <a href="finance.html">Fees, Payments & Messages</a>
+            <a href="profile.html">Profile</a>
+            <div class="sideBottom">
+                <a class="btn" style="width:100%;background:#fff;color:#26342d" href="index.html">Back to Website</a>
+            </div>
+        </aside>
+        <main class="portalMain">
+            <div class="portalTop">
+                <button class="hamb portalMenu" data-menu=".side" aria-label="Toggle Sidebar Navigation">☰</button>
+                <b style="font:21px Georgia">Child Profile & Health Records</b>
+                <span class="spacer"></span>
+                <button class="toggle-rtl" data-rtl title="Toggle RTL/LTR">RTL</button>
+                <button class="toggle" data-theme>◐</button>
+                <span class="avatar">AS</span>
+            </div>
+            <div class="portalContent">
+                <div class="welcome">
+                    <div>
+                        <div class="eyebrow">Casa 1 Community · Student Profile</div>
+                        <h1 style="font-size:42px;margin:4px 0 8px;">Emma Sharma</h1>
+                        <p style="color:var(--muted)">4.5 Years Old · Primary Casa Program</p>
+                    </div>
+                    <button class="btn soft" onclick="alert('Update request sent to administration.')">Edit Information</button>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric">
+                        <span class="num">STUDENT ID</span>
+                        <strong>#889</strong>
+                        <span>Enrolled Fall 2024</span>
+                    </div>
+                    <div class="metric">
+                        <span class="num">CLASSROOM</span>
+                        <strong>Casa 1</strong>
+                        <span>Lead Guide: Maria M.</span>
+                    </div>
+                    <div class="metric">
+                        <span class="num">SCHEDULE</span>
+                        <strong>Full Day</strong>
+                        <span>8:45 AM – 3:00 PM</span>
+                    </div>
+                </div>
+
+                <div class="dash" style="margin-top:24px;">
+                    <!-- Medical & Health Details Card -->
+                    <div class="pCard">
+                        <div class="eyebrow">Medical & Health Information</div>
+                        <h2 style="font-size:26px;margin:8px 0 16px;">Health Record Summary</h2>
+                        <ul class="list" style="margin:0;">
+                            <li><strong>Blood Type:</strong> A Positive (A+)</li>
+                            <li><strong>Allergies:</strong> <span class="tag tag-warning">Mild Peanut Sensitivity</span> (Action Plan on File)</li>
+                            <li><strong>Dietary Notes:</strong> Vegetarian lunch; prefers oat milk during snack time</li>
+                            <li><strong>Pediatrician:</strong> Dr. R. Mehta · Oakwood Pediatrics (+1 555-0199)</li>
+                            <li><strong>Immunizations:</strong> Up to date (Verified Aug 2026)</li>
+                        </ul>
+                    </div>
+
+                    <!-- Emergency Contact Card -->
+                    <div class="pCard">
+                        <div class="eyebrow">Emergency Contacts</div>
+                        <h2 style="font-size:26px;margin:8px 0 16px;">Primary Contacts</h2>
+                        <div style="border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:12px;">
+                            <b>Ananya Sharma</b> <span class="tag tag-success">Mother / Primary</span>
+                            <div style="font-size:13px;color:var(--muted);margin-top:4px;">Phone: +1 555-0143</div>
+                            <div style="font-size:13px;color:var(--muted);">Email: ananya.s@example.com</div>
+                        </div>
+                        <div>
+                            <b>Rajesh Sharma</b> <span class="tag tag-info">Father / Secondary</span>
+                            <div style="font-size:13px;color:var(--muted);margin-top:4px;">Phone: +1 555-0192</div>
+                            <div style="font-size:13px;color:var(--muted);">Email: rajesh.s@example.com</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dash">
+                    <!-- Authorized Pick-up Guardians -->
+                    <div class="pCard">
+                        <div class="eyebrow">Security & Dismissal</div>
+                        <h2 style="font-size:26px;margin:8px 0 16px;">Authorized Pick-up Persons</h2>
+                        <div class="portal-table-wrap">
+                            <table class="portal-table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Relationship</th>
+                                        <th>Contact Phone</th>
+                                        <th>Security PIN</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><b>Ananya Sharma</b></td>
+                                        <td>Mother</td>
+                                        <td>+1 555-0143</td>
+                                        <td><span class="tag tag-success">Verified</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Rajesh Sharma</b></td>
+                                        <td>Father</td>
+                                        <td>+1 555-0192</td>
+                                        <td><span class="tag tag-success">Verified</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Sunita Sharma</b></td>
+                                        <td>Grandmother</td>
+                                        <td>+1 555-0812</td>
+                                        <td><span class="tag tag-info">PIN #7821</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Daily Schedule & Routine -->
+                    <div class="pCard">
+                        <div class="eyebrow">Class Routine</div>
+                        <h3 style="margin-top:6px;">Daily Rhythm</h3>
+                        <p style="font-size:13.5px;color:var(--muted);margin-bottom:14px;">Emma thrives with a structured yet flexible work cycle.</p>
+                        <div style="font-size:13.5px;line-height:1.8;">
+                            <div>⏰ <b>08:45 AM</b> — Arrival & Cubby Setup</div>
+                            <div>🌱 <b>09:00 AM</b> — 3-Hour Uninterrupted Work Cycle</div>
+                            <div>🍎 <b>11:45 AM</b> — Community Lunch & Grace/Courtesy</div>
+                            <div>☀️ <b>01:00 PM</b> — Outdoor Nature Exploration</div>
+                            <div>📚 <b>02:15 PM</b> — Circle Time & Story</div>
+                            <div>🏡 <b>03:00 PM</b> — Dismissal</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

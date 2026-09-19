@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Sign Up · Little Oak Montessori</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>(function(){var t=localStorage.getItem('lo-theme');if(t)document.documentElement.dataset.theme=t;var r=localStorage.getItem('lo-rtl');if(r==='rtl')document.documentElement.setAttribute('dir','rtl');else if(r==='ltr')document.documentElement.setAttribute('dir','ltr');})();</script>
+</head>
+<body>
+    <div class="auth-wrapper">
+        <div class="auth-card">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+                <a class="logo" href="index.html" style="margin:0;">
+                    <span class="mark">L</span>
+                    <span>LITTLE OAK<br><small>MONTESSORI</small></span>
+                </a>
+                <div style="display:flex;gap:6px;">
+                    <button class="toggle-rtl" data-rtl title="Toggle RTL/LTR">RTL</button>
+                    <button class="toggle" data-theme>🌙</button>
+                </div>
+            </div>
+            <div class="auth-tabs">
+                <a href="login.html" class="auth-tab">Log In</a>
+                <a href="signup.html" class="auth-tab active">Sign Up</a>
+            </div>
+            <div class="eyebrow">New Family Registration</div>
+            <h1 style="font-size:36px;margin:10px 0 16px;">Create Account</h1>
+            <p style="color:var(--muted);font-size:14px;margin-bottom:20px;">Register to manage admissions, book campus visits, and access family resources.</p>
+            <form class="form" onsubmit="event.preventDefault();location.href='dashboard.html'">
+                <label>Full Name
+                    <input type="text" required placeholder="Ananya Sharma">
+                </label>
+                <label>Email Address
+                    <input type="email" required placeholder="parent@example.com">
+                </label>
+                <label>Password
+                    <input type="password" required placeholder="Create password">
+                </label>
+                <button class="btn" style="width:100%;margin-top:6px;">Create Family Account</button>
+            </form>
+            <div style="text-align:center;margin-top:24px;border-top:1px solid var(--line);padding-top:18px;">
+                <a class="btn soft" href="index.html" style="width:100%;">← Back to Website</a>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

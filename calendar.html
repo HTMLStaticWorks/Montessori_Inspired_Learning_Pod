@@ -1,0 +1,198 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Calendar & Documents · Parent Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>(function(){var t=localStorage.getItem('lo-theme');if(t)document.documentElement.dataset.theme=t;var r=localStorage.getItem('lo-rtl');if(r==='rtl')document.documentElement.setAttribute('dir','rtl');else if(r==='ltr')document.documentElement.setAttribute('dir','ltr');})();</script>
+</head>
+
+<body class="portal">
+    <div class="portalShell">
+        <aside class="side">
+            <a class="logo" href="dashboard.html">
+                <span class="mark">L</span>
+                <span>LITTLE OAK<br><small>PARENT PORTAL</small></span>
+            </a>
+            <a href="dashboard.html">Overview</a>
+            <a href="child.html">My Child</a>
+            <a href="activities.html">Activities & Attendance</a>
+            <a href="progress.html">Reports & Progress</a>
+            <a href="calendar.html" class="active">Calendar & Documents</a>
+            <a href="finance.html">Fees, Payments & Messages</a>
+            <a href="profile.html">Profile</a>
+            <div class="sideBottom">
+                <a class="btn" style="width:100%;background:#fff;color:#26342d" href="index.html">Back to Website</a>
+            </div>
+        </aside>
+        <main class="portalMain">
+            <div class="portalTop">
+                <button class="hamb portalMenu" data-menu=".side" aria-label="Toggle Sidebar Navigation">☰</button>
+                <b style="font:21px Georgia">School Calendar & Family Documents</b>
+                <span class="spacer"></span>
+                <button class="toggle-rtl" data-rtl title="Toggle RTL/LTR">RTL</button>
+                <button class="toggle" data-theme>◐</button>
+                <span class="avatar">AS</span>
+            </div>
+            <div class="portalContent">
+                <div class="welcome">
+                    <div>
+                        <div class="eyebrow">Events & Resources Hub</div>
+                        <h1 style="font-size:42px;margin:4px 0 8px;">Calendar & Documents</h1>
+                        <p style="color:var(--muted)">Stay synchronized with school events, schedule guide meetings, and access forms.</p>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric">
+                        <span class="num">UPCOMING EVENTS</span>
+                        <strong>3</strong>
+                        <span>This month</span>
+                    </div>
+                    <div class="metric">
+                        <span class="num">NEXT MEETING</span>
+                        <strong>26 Sep</strong>
+                        <span>Parent Conversation</span>
+                    </div>
+                    <div class="metric">
+                        <span class="num">DOCUMENT VAULT</span>
+                        <strong>5</strong>
+                        <span>Available downloads</span>
+                    </div>
+                </div>
+
+                <!-- Calendar Events & Scheduler -->
+                <div class="dash" style="margin-top:24px;">
+                    <div class="pCard">
+                        <div class="eyebrow">School Events</div>
+                        <h2 style="font-size:26px;margin:8px 0 16px;">Upcoming Calendar Events</h2>
+
+                        <div class="activity">
+                            <div class="icon" style="font-size:16px;width:38px;height:38px;">🗓️</div>
+                            <div>
+                                <b>Parent-Teacher Conversation (Q3)</b> <span class="tag tag-info">Scheduled</span>
+                                <small style="display:block;color:var(--muted);margin-top:2px;">Individual 20-minute meeting with Maria Montessori.</small>
+                            </div>
+                            <span class="badge">26 Sep · 3:30 PM</span>
+                        </div>
+
+                        <div class="activity">
+                            <div class="icon" style="font-size:16px;width:38px;height:38px;">🏫</div>
+                            <div>
+                                <b>Staff Development Day</b> <span class="tag tag-warning">School Closed</span>
+                                <small style="display:block;color:var(--muted);margin-top:2px;">No student classes for Casa and Toddler pods.</small>
+                            </div>
+                            <span class="badge">30 Sep · All Day</span>
+                        </div>
+
+                        <div class="activity">
+                            <div class="icon" style="font-size:16px;width:38px;height:38px;">🍂</div>
+                            <div>
+                                <b>Autumn Harvest Festival</b> <span class="tag tag-success">Community Event</span>
+                                <small style="display:block;color:var(--muted);margin-top:2px;">Family gathering in the school garden & pumpkin work.</small>
+                            </div>
+                            <span class="badge">12 Oct · 10:00 AM</span>
+                        </div>
+
+                        <div class="activity">
+                            <div class="icon" style="font-size:16px;width:38px;height:38px;">👨‍👩‍👧</div>
+                            <div>
+                                <b>Grandparents & Special Friends Day</b> <span class="tag tag-muted">Upcoming</span>
+                                <small style="display:block;color:var(--muted);margin-top:2px;">Morning classroom visit and tea ceremony.</small>
+                            </div>
+                            <span class="badge">24 Oct · 09:15 AM</span>
+                        </div>
+                    </div>
+
+                    <!-- Meeting Scheduler Form Card -->
+                    <div class="pCard">
+                        <div class="eyebrow">Meeting Request</div>
+                        <h3>Schedule Guide Meeting</h3>
+                        <p style="font-size:13.5px;color:var(--muted);">Book a 1-on-1 session with Lead Guide Maria Montessori.</p>
+                        <form class="form" data-demo style="margin-top:14px;">
+                            <label>Meeting Topic
+                                <select required>
+                                    <option value="routine">Routine Developmental Check-in</option>
+                                    <option value="progress">Academic Progress Review</option>
+                                    <option value="behavior">Behavior / Adjustment Discussion</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </label>
+                            <label>Preferred Format
+                                <select required>
+                                    <option value="inperson">In-Person at Campus</option>
+                                    <option value="zoom">Virtual Zoom Conference</option>
+                                </select>
+                            </label>
+                            <label>Preferred Time Slot
+                                <select required>
+                                    <option value="slot1">26 Sep · 3:30 PM</option>
+                                    <option value="slot2">26 Sep · 4:00 PM</option>
+                                    <option value="slot3">27 Sep · 8:15 AM</option>
+                                </select>
+                            </label>
+                            <button class="btn" style="width:100%;margin-top:6px;">Confirm Booking Request</button>
+                            <div class="note" style="font-size:12px;color:var(--sage);margin-top:6px;"></div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Family Document Vault -->
+                <div class="dash">
+                    <div class="pCard" style="grid-column: 1 / -1;">
+                        <div class="eyebrow">Download Center</div>
+                        <h2 style="font-size:26px;margin:8px 0 16px;">School Documents & Policy Forms</h2>
+                        <div class="portal-table-wrap">
+                            <table class="portal-table">
+                                <thead>
+                                    <tr>
+                                        <th>Document Title</th>
+                                        <th>Category</th>
+                                        <th>Last Updated</th>
+                                        <th>File Size</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><b>Parent Handbook 2026-2027</b></td>
+                                        <td>School Policy</td>
+                                        <td>01 Aug 2026</td>
+                                        <td>1.4 MB</td>
+                                        <td><button class="btn soft" onclick="alert('Downloading Parent Handbook PDF prototype...')">📥 Download</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Emergency Medical Consent Form</b></td>
+                                        <td>Health & Safety</td>
+                                        <td>15 Aug 2026</td>
+                                        <td>420 KB</td>
+                                        <td><button class="btn soft" onclick="alert('Downloading Emergency Medical Form PDF prototype...')">📥 Download</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Field Trip Permission Slip (Harvest Farm)</b></td>
+                                        <td>Event Form</td>
+                                        <td>10 Sep 2026</td>
+                                        <td>310 KB</td>
+                                        <td><button class="btn soft" onclick="alert('Downloading Field Trip Slip PDF prototype...')">📥 Download</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Weekly Organic Lunch & Snack Menu</b></td>
+                                        <td>Nutrition</td>
+                                        <td>18 Sep 2026</td>
+                                        <td>580 KB</td>
+                                        <td><button class="btn soft" onclick="alert('Downloading Weekly Menu PDF prototype...')">📥 Download</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
