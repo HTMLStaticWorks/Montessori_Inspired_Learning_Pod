@@ -1,0 +1,9 @@
+LITTLE OAK MONTESSORI - FIXED PACKAGE
+
+1. Extract this ZIP.
+2. In VS Code choose File > Open Folder and select THIS extracted folder (the folder containing index.html, styles.css, and script.js).
+3. Right-click index.html > Open with Live Server.
+4. The browser URL should be http://127.0.0.1:5500/index.html.
+5. If you see only plain text, press Ctrl+Shift+R and check F12 > Network > styles.css. It should be 200, not 404.
+
+This package has a flat root so index.html, styles.css, script.js and all page files are in the same project folder. The original .git folder has been removed because it is not needed to run the website.

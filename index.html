@@ -1,46 +1,88 @@
 <!doctype html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Little Oak Montessori</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Little Oak Montessori | Nurturing Confidence & Curiosity</title>
+    <meta name="description"
+        content="Little Oak Montessori is a caring, child-centered Montessori learning pod nurturing curious, confident, and independent lifelong learners for ages 1.5 to 12 years.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <script>(function(){var t=localStorage.getItem('lo-theme');if(t)document.documentElement.dataset.theme=t;var r=localStorage.getItem('lo-rtl');if(r==='rtl')document.documentElement.setAttribute('dir','rtl');else if(r==='ltr')document.documentElement.setAttribute('dir','ltr');})();</script>
+    <script>
+        (function () {
+            try {
+                localStorage.removeItem('lo-rtl');
+                localStorage.setItem('lo-theme', 'light');
+            } catch (e) { }
+            document.documentElement.dataset.theme = 'light';
+            document.documentElement.setAttribute('dir', 'ltr');
+        })();
+    </script>
 </head>
 
 <body>
-    <div class="top">
-        <div class="container in"><span>Academic Session 2026–27</span><span>Admissions · +91 90000 00000 ·
-                hello@littleoakmontessori.in</span></div>
+    <!-- Announcement Bar -->
+    <div class="top" id="top-announcement">
+        <div class="container in">
+            <span>🌿 Academic Session 2026–27 · Admissions Now Open</span>
+            <span>Admissions Desk: +91 90000 00000 · hello@littleoakmontessori.in</span>
+        </div>
     </div>
-    <header class="header">
-        <div class="container nav"><a class="logo" href="index.html"><span class="mark">L</span><span>LITTLE
-                    OAK<br><small>MONTESSORI</small></span></a>
-            <nav class="links" id="nav"><a href="index.html" class="active">Home</a><a href="home2.html">Home 2</a><a
-                    href="about.html">About</a><a href="programs.html">Programs</a><a
-                    href="facilities.html">Facilities</a><a href="gallery.html">Gallery</a><a
-                    href="admissions.html">Admissions</a><a href="contact.html">Contact</a></nav><a class="btn"
-                href="dashboard.html">Parent Portal</a><a class="btn soft" href="login.html">Login</a><button class="toggle-rtl" data-rtl
-                title="Toggle RTL/LTR">RTL</button><button class="toggle" data-theme>◐</button><button class="hamb"
-                data-menu="#nav" aria-label="Toggle Navigation">☰</button>
+
+    <!-- Main Navigation Header -->
+    <header class="header" id="main-header">
+        <div class="container nav">
+            <a class="logo" href="index.html" id="brand-logo">
+                <span class="mark">L</span>
+                <span>LITTLE OAK<br><small>MONTESSORI</small></span>
+            </a>
+            <nav class="links" id="nav">
+                <a href="index.html" class="active" id="nav-home">Home</a>
+                <a href="home2.html" id="nav-home2">Home 2</a>
+                <a href="about.html" id="nav-about">About</a>
+                <a href="programs.html" id="nav-programs">Programs</a>
+                <a href="facilities.html" id="nav-facilities">Facilities</a>
+                <a href="gallery.html" id="nav-gallery">Gallery</a>
+                <a href="admissions.html" id="nav-admissions">Admissions</a>
+                <a href="contact.html" id="nav-contact">Contact</a>
+            </nav>
+            <div class="nav-actions">
+                <a class="btn" href="dashboard.html" id="btn-parent-portal">Parent Portal</a>
+                <a class="btn soft" href="login.html" id="btn-login">Login</a>
+                <button class="toggle-rtl" data-rtl id="btn-rtl-toggle" title="Toggle RTL/LTR">RTL</button>
+                <button class="toggle" data-theme id="btn-theme-toggle" title="Toggle Theme"><span>🌙</span> <span>Dark</span></button>
+                <button class="hamb" data-menu="#nav" id="btn-mobile-hamburger" aria-label="Toggle Navigation">☰</button>
+            </div>
         </div>
     </header>
-    <section class="hero">
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero-section">
         <div class="container">
             <div class="heroGrid">
                 <div>
-                    <div class="eyebrow">Little Oak Montessori · 2026–27</div>
+                    <span class="eyebrow">Little Oak Montessori · Session 2026–27</span>
                     <h1>A place where curiosity becomes confidence.</h1>
-                    <p>A caring Montessori environment for confident, curious and responsible learners.</p>
-                    <div class="actions"><a class="btn" href="programs.html">Explore Programs</a><a class="btn soft"
-                            href="admissions.html">Book a Visit</a></div>
+                    <p>A caring, prepared Montessori environment designed for confident, self-directed, and responsible
+                        lifelong learners.</p>
+                    <div class="actions">
+                        <a class="btn" href="programs.html" id="hero-cta-programs">Explore Programs →</a>
+                        <a class="btn soft" href="admissions.html" id="hero-cta-visit">Book a Campus Tour</a>
+                    </div>
                 </div>
-                <div class="photo"><img
-                        src="https://images.pexels.com/photos/34708272/pexels-photo-34708272.jpeg?auto=compress&cs=tinysrgb&w=1600&h=1000&fit=crop"
-                        alt="Little Oak Montessori real-life classroom photograph 1"></div>
+                <div class="photo">
+                    <img src="https://images.pexels.com/photos/34708272/pexels-photo-34708272.jpeg?auto=compress&cs=tinysrgb&w=1600&h=1000&fit=crop"
+                        alt="Little Oak Montessori real-life classroom environment with children engaged in hands-on learning">
+                </div>
             </div>
-            <div class="feature-strip">
+
+            <!-- Feature Strip Grid -->
+            <div class="feature-strip" id="features-strip">
                 <div class="feature-card">
                     <div class="feature-icon">🏫</div>
                     <h3>Smart Classrooms</h3>
@@ -74,220 +116,282 @@
             </div>
         </div>
     </section>
-    <section class="section">
+
+    <!-- Montessori Philosophy Section -->
+    <section class="section" id="philosophy-section">
         <div class="container">
             <div class="head">
                 <div>
-                    <div class="eyebrow">The Montessori difference</div>
+                    <span class="eyebrow">The Montessori Difference</span>
                     <h2>Learning begins with the child.</h2>
                 </div>
-                <p>This follows the supplied Pravesh reference's clear sequence: strong hero, feature highlights, school
-                    story, academics, campus life, people, admissions and portal access — redesigned as an original
-                    Montessori system.</p>
+                <p>Our child-first pedagogy supports every child's natural developmental milestones through purposeful
+                    hands-on exploration, freedom within limits, and individualized guidance.</p>
             </div>
             <div class="grid g3">
                 <div class="card">
                     <div class="icon">✦</div>
                     <h3>Independence</h3>
-                    <p>Meaningful real-life work helps children become capable.</p>
+                    <p>Meaningful practical life activities empower children to take ownership of their learning and
+                        daily choices.</p>
                 </div>
                 <div class="card">
                     <div class="icon">◌</div>
                     <h3>Concentration</h3>
-                    <p>Uninterrupted work supports deep engagement.</p>
+                    <p>Uninterrupted work blocks cultivate deep focus, intrinsic motivation, and problem-solving
+                        perseverance.</p>
                 </div>
                 <div class="card">
                     <div class="icon">↗</div>
                     <h3>Confidence</h3>
-                    <p>Children build trust in their ability to solve problems.</p>
+                    <p>Self-correcting materials build authentic self-esteem and resilience in tackling complex tasks.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
-    <section class="section alt">
+
+    <!-- School Story & Overview Section -->
+    <section class="section alt" id="about-overview-section">
         <div class="container split">
-            <div class="splitPhoto"><img
-                    src="https://images.pexels.com/photos/31864433/pexels-photo-31864433.jpeg?auto=compress&cs=tinysrgb&w=1600&h=1000&fit=crop"
-                    alt="Little Oak Montessori real-life classroom photograph 2"></div>
+            <div class="splitPhoto">
+                <img src="https://images.pexels.com/photos/31864433/pexels-photo-31864433.jpeg?auto=compress&cs=tinysrgb&w=1600&h=1000&fit=crop"
+                    alt="Little Oak Montessori students collaborating on creative projects">
+            </div>
             <div>
-                <div class="eyebrow">About our school</div>
-                <h2>A strong beginning for every child.</h2>
-                <p>A child-centred school story, adapted from the reference pattern but focused on Montessori
-                    philosophy.</p>
+                <span class="eyebrow">About Our Learning Pod</span>
+                <h2>A strong, joyful beginning for every child.</h2>
+                <p>At Little Oak Montessori, we craft a warm, family-centered atmosphere where children feel valued,
+                    safe, and excited to explore the world around them.</p>
                 <ul class="list">
-                    <li>Child-centred learning</li>
-                    <li>Prepared environments</li>
-                    <li>Experienced guides</li>
-                    <li>School–family partnership</li>
-                </ul><a class="btn soft" href="about.html">Learn About Us</a>
+                    <li>Child-centered, self-paced learning pathways</li>
+                    <li>Thoughtfully prepared indoor & outdoor environments</li>
+                    <li>AMI & AMS certified Montessori educators</li>
+                    <li>Transparent school-family partnership</li>
+                </ul>
+                <a class="btn soft" href="about.html" id="btn-learn-more">Learn More About Us</a>
             </div>
         </div>
     </section>
-    <section class="section">
+
+    <!-- Academics & Programs Section -->
+    <section class="section" id="academics-section">
         <div class="container">
             <div class="head">
                 <div>
-                    <div class="eyebrow">Academics</div>
-                    <h2>Learning that grows with the child.</h2>
-                </div><a class="btn soft" href="programs.html">View Programs</a>
+                    <span class="eyebrow">Academic Programs</span>
+                    <h2>Learning that grows with your child.</h2>
+                </div>
+                <a class="btn soft" href="programs.html" id="btn-view-programs">View All Programs</a>
             </div>
             <div class="grid g3">
-                <div class="card soft"><span class="badge">1.5–3 Years</span>
+                <div class="card soft">
+                    <span class="badge">1.5 – 3 Years</span>
                     <h3>Toddler Community</h3>
-                    <p>Movement, language, practical life and social routines.</p>
+                    <p>Nurturing movement, language expansion, sensory awareness, and gentle social routines.</p>
                 </div>
-                <div class="card soft"><span class="badge">3–6 Years</span>
+                <div class="card soft">
+                    <span class="badge">3 – 6 Years</span>
                     <h3>Casa / Primary</h3>
-                    <p>Full Montessori work across core areas.</p>
+                    <p>Comprehensive Montessori work across Practical Life, Sensorial, Language, Math, and Cultural
+                        studies.</p>
                 </div>
-                <div class="card soft"><span class="badge">6–12 Years</span>
-                    <h3>Elementary</h3>
-                    <p>Research, collaboration and cultural exploration.</p>
+                <div class="card soft">
+                    <span class="badge">6 – 12 Years</span>
+                    <h3>Elementary Pod</h3>
+                    <p>Collaborative research, cosmic education, advanced mathematics, and community service projects.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
-    <section class="section alt">
+
+    <!-- Environment Section -->
+    <section class="section alt" id="environment-section">
         <div class="container">
-            <div class="eyebrow">Our environment</div>
+            <span class="eyebrow">Our Environment</span>
             <h2>A welcoming place to learn and grow.</h2>
-            <div class="grid g3">
+            <div class="grid g3" style="margin-top: 24px;">
                 <div class="card">
-                    <h3>Purposeful spaces</h3>
-                    <p>Rooms designed around movement and concentration.</p>
+                    <div class="icon">🏛️</div>
+                    <h3>Purposeful Spaces</h3>
+                    <p>Architect-designed classrooms engineered for free movement, quiet concentration, and natural
+                        light.</p>
                 </div>
                 <div class="card">
-                    <h3>Outdoor learning</h3>
-                    <p>Nature becomes part of daily observation.</p>
+                    <div class="icon">🌿</div>
+                    <h3>Outdoor Learning</h3>
+                    <p>Gardening beds, nature observation stations, and physical play spaces connected to daily
+                        discovery.</p>
                 </div>
                 <div class="card">
-                    <h3>Creative expression</h3>
-                    <p>Art, music and making have room in the week.</p>
+                    <div class="icon">🎨</div>
+                    <h3>Creative Expression</h3>
+                    <p>Integrated art, music studio, movement routines, and maker spaces integrated into every week.</p>
                 </div>
             </div>
         </div>
     </section>
-    <section class="section">
+
+    <!-- Statistics Strip -->
+    <section class="section" id="stats-section">
         <div class="container">
             <div class="stats">
-                <div class="stat"><strong>293+</strong><span>illustrative students</span></div>
-                <div class="stat"><strong>6+</strong><span>guides</span></div>
-                <div class="stat"><strong>11</strong><span>learning groups</span></div>
-                <div class="stat"><strong>98%</strong><span>illustrative family satisfaction</span></div>
+                <div class="stat">
+                    <strong>290+</strong>
+                    <span>Enrolled Students</span>
+                </div>
+                <div class="stat">
+                    <strong>12+</strong>
+                    <span>Montessori Guides</span>
+                </div>
+                <div class="stat">
+                    <strong>1:8</strong>
+                    <span>Guide-to-Student Ratio</span>
+                </div>
+                <div class="stat">
+                    <strong>98%</strong>
+                    <span>Parent Satisfaction</span>
+                </div>
             </div>
         </div>
     </section>
-    <section class="section alt">
+
+    <!-- Leadership Section -->
+    <section class="section alt" id="leadership-section">
         <div class="container split">
             <div>
-                <div class="eyebrow">Leadership</div>
-                <h2>A message from our school community.</h2>
-                <p>We want children to leave each day with more curiosity, more capability and more confidence.</p>
-                <p><strong>— School Director</strong></p>
+                <span class="eyebrow">School Leadership</span>
+                <h2>A message from our Founding Director.</h2>
+                <p>“Our goal is simple yet profound: to prepare children not just for school, but for life. We want
+                    every child to leave our pod each day with greater curiosity, deeper capability, and unshakeable
+                    confidence.”</p>
+                <p style="margin-top: 16px; font-weight: 700; color: var(--sage);">— Dr. Eleanor Vance, School Director
+                    & Master Pedagogue</p>
             </div>
-            <div class="splitPhoto"><img
-                    src="https://images.pexels.com/photos/8363783/pexels-photo-8363783.jpeg?auto=compress&cs=tinysrgb&w=1600&h=1000&fit=crop"
-                    alt="Little Oak Montessori real-life classroom photograph 3"></div>
-        </div>
-    </section>
-    <section class="section">
-        <div class="container">
-            <div class="head">
-                <div>
-                    <div class="eyebrow">Student life</div>
-                    <h2>Moments worth remembering.</h2>
-                </div>
-            </div>
-            <div class="grid g3">
-                <div class="card">
-                    <h3>Learning</h3>
-                    <p>Daily work and discovery.</p>
-                </div>
-                <div class="card">
-                    <h3>Community</h3>
-                    <p>Friendship and shared routines.</p>
-                </div>
-                <div class="card">
-                    <h3>Celebration</h3>
-                    <p>Projects, events and milestones.</p>
-                </div>
+            <div class="splitPhoto">
+                <img src="https://images.pexels.com/photos/8363783/pexels-photo-8363783.jpeg?auto=compress&cs=tinysrgb&w=1600&h=1000&fit=crop"
+                    alt="Little Oak Montessori School Director interacting warmly with students">
             </div>
         </div>
     </section>
-    <section class="section alt">
+
+    <!-- Parent Portal Feature Section -->
+    <section class="section" id="portal-preview-section">
         <div class="container split">
             <div>
-                <div class="eyebrow">Parent portal</div>
-                <h2>Fees, attendance, activities and progress in one place.</h2>
-                <p>The private family experience uses the same brand and visual language.</p><a class="btn"
-                    href="dashboard.html">Open Parent Portal</a>
+                <span class="eyebrow">Parent Portal</span>
+                <h2>Fees, attendance, updates, and progress tracking in one place.</h2>
+                <p>Our seamless digital parent dashboard keeps you connected with daily photo logs, progress reports,
+                    teacher notes, and fee management.</p>
+                <a class="btn" href="dashboard.html" id="btn-open-portal">Open Parent Portal →</a>
             </div>
             <div class="quote">
-                <p>“See the learning journey, not just the timetable.”</p><small>Little Oak parent experience</small>
+                <p>“See your child's learning journey unfold in real-time — transparent, meaningful, and effortless.”
+                </p>
+                <small>Little Oak Family Experience</small>
             </div>
         </div>
     </section>
-    <section class="section">
+
+    <!-- Admissions Steps Section -->
+    <section class="section alt" id="admissions-steps-section">
         <div class="container">
             <div class="head">
                 <div>
-                    <div class="eyebrow">Admissions</div>
-                    <h2>Admissions open for the new academic session.</h2>
+                    <span class="eyebrow">Admissions Process</span>
+                    <h2>Four simple steps to join Little Oak.</h2>
                 </div>
-                <p>Visit the environment, meet the guides and ask questions.</p>
+                <p>Admissions are now open for Academic Session 2026–27. We invite families to tour our facilities and
+                    meet our guides.</p>
             </div>
-            <div class="grid g4">
-                <div class="card">
-                    <h3>Enquire</h3>
+            <div class="timeline">
+                <div class="step">
+                    <h3>1. Enquire</h3>
+                    <p>Fill out our simple inquiry form to share your child's details.</p>
                 </div>
-                <div class="card">
-                    <h3>Visit</h3>
+                <div class="step">
+                    <h3>2. Visit</h3>
+                    <p>Attend an interactive campus tour and classroom observation.</p>
                 </div>
-                <div class="card">
-                    <h3>Meet</h3>
+                <div class="step">
+                    <h3>3. Meet</h3>
+                    <p>Have an informal interaction with our Montessori guides.</p>
                 </div>
-                <div class="card">
-                    <h3>Begin</h3>
+                <div class="step">
+                    <h3>4. Begin</h3>
+                    <p>Complete enrollment and welcome your child to their new pod.</p>
                 </div>
             </div>
         </div>
     </section>
-    <footer class="footer">
+
+    <!-- Footer -->
+    <footer class="footer" id="main-footer">
         <div class="container footerGrid">
             <div>
-                <div class="logo"><span class="mark" style="background:#fff;color:#26342d">L</span><span>LITTLE
-                        OAK<br><small>MONTESSORI</small></span></div>
-                <p>A warm prepared environment where children learn through curiosity and independence.</p>
+                <div class="logo">
+                    <span class="mark" style="background:#ffffff; color:#365343;">L</span>
+                    <span>LITTLE OAK<br><small>MONTESSORI</small></span>
+                </div>
+                <p style="margin-top: 14px;">A warm, prepared Montessori environment where children learn through
+                    curiosity, hands-on exploration, and independent discovery.</p>
                 <div class="social">
-                    <a href="#" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
-                    <a href="#" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
-                    <a href="#" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
-                    <a href="#" aria-label="YouTube"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg></a>
+                    <a href="#" aria-label="Instagram"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg></a>
+                    <a href="#" aria-label="Facebook"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                        </svg></a>
+                    <a href="#" aria-label="LinkedIn"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                            </path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg></a>
+                    <a href="#" aria-label="YouTube"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z">
+                            </path>
+                            <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                        </svg></a>
                 </div>
             </div>
             <div>
                 <h4>Explore</h4>
-                <p><a href="about.html">About</a></p>
-                <p><a href="programs.html">Programs</a></p>
-                <p><a href="facilities.html">Facilities</a></p>
-                <p><a href="gallery.html">Gallery</a></p>
+                <p><a href="about.html">About School</a></p>
+                <p><a href="programs.html">Academic Programs</a></p>
+                <p><a href="facilities.html">Campus Facilities</a></p>
+                <p><a href="gallery.html">Photo Gallery</a></p>
             </div>
             <div>
                 <h4>Families</h4>
-                <p><a href="admissions.html">Admissions</a></p>
-                <p><a href="contact.html">Contact</a></p>
-                <p><a href="dashboard.html">Parent Portal</a></p>
-                <p><a href="login.html">Login / Register</a></p>
+                <p><a href="admissions.html">Admissions Guide</a></p>
+                <p><a href="contact.html">Contact Us</a></p>
+                <p><a href="dashboard.html">Parent Dashboard</a></p>
+                <p><a href="login.html">Family Login</a></p>
             </div>
             <div>
                 <h4>Newsletter</h4>
-                <p>Monthly notes from our learning community.</p>
-                <div class="news"><input placeholder="Your email"><button class="btn">Join</button></div>
+                <p>Subscribe to monthly updates from our learning community.</p>
+                <form data-demo class="news" id="newsletter-form">
+                    <input type="email" placeholder="Your email address" required aria-label="Email Address">
+                    <button type="submit" class="btn">Join</button>
+                </form>
             </div>
         </div>
-        <div class="container copy"><span>© 2026 Little Oak Montessori</span><span>Original prototype inspired by
-                contemporary school-site patterns.</span></div>
+        <div class="container copy">
+            <span>© 2026 Little Oak Montessori Learning Pod. All rights reserved.</span>
+            <span>Crafted for intuitive, confident learning.</span>
+        </div>
     </footer>
+
     <script src="script.js"></script>
 </body>
 
