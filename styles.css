@@ -20,33 +20,203 @@
     --top-bg: #365343;
     --top-text: #ffffff;
     --card-bg: #ffffff;
-    --shadow: 0 10px 30px rgba(27, 40, 33, 0.07);
-    --shadow-hover: 0 18px 42px rgba(27, 40, 33, 0.12);
 }
 
 [data-theme="dark"] {
-    --ink: #f0f5f2;
-    --muted: #9ab0a2;
+    --ink: #e8f0eb;
+    --muted: #9ab0a3;
     --paper: #121a15;
-    --cream: #1a261f;
-    --sage: #456b57;
-    --sage-dark: #2d473a;
-    --sage-light: #7da38d;
-    --terra: #e08362;
-    --gold: #f0b84d;
-    --line: #283a2e;
-    --header-bg: rgba(18, 26, 21, 0.96);
-    --footer-bg: #0d140f;
-    --footer-text: #9eb0a4;
-    --footer-heading: #f0f5f2;
-    --footer-link: #bcd0c3;
-    --footer-border: #223227;
-    --top-bg: #18261d;
-    --top-text: #e2ede6;
-    --card-bg: #1a261f;
+    --cream: #1a251e;
+    --sage: #4f745d;
+    --sage-dark: #375342;
+    --sage-light: #7c9c89;
+    --terra: #e08567;
+    --gold: #f0b448;
+    --line: #29382e;
+    --header-bg: rgba(18, 26, 21, 0.95);
+    --footer-bg: #152019;
+    --footer-text: #a8bba0;
+    --footer-heading: #e4efe8;
+    --footer-link: #c8dacd;
+    --footer-border: #243328;
+    --top-bg: #152019;
+    --top-text: #ffffff;
+    --card-bg: #19241d;
     --shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-    --shadow-hover: 0 18px 42px rgba(0, 0, 0, 0.55);
+    --shadow-hover: 0 18px 42px rgba(0, 0, 0, 0.6);
 }
+
+/* Theme Toggle Button Styles */
+.theme-toggle-btn {
+    background: var(--cream);
+    color: var(--ink);
+    border: 1.5px solid rgba(54, 83, 67, 0.4);
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    flex-shrink: 0;
+}
+
+.theme-toggle-btn:hover {
+    background: var(--sage);
+    color: #ffffff;
+    border-color: var(--sage);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(54, 83, 67, 0.2);
+}
+
+.theme-toggle-btn svg {
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.theme-toggle-btn:hover svg {
+    transform: rotate(15deg);
+}
+
+.portal-theme-btn {
+    margin-right: 8px;
+}
+
+.floating-theme-btn {
+    position: fixed;
+    bottom: 24px;
+    right: 80px;
+    z-index: 999;
+    box-shadow: var(--shadow);
+}
+
+/* RTL Toggle Button Styles */
+.rtl-toggle-btn {
+    background: var(--cream);
+    color: var(--ink);
+    border: 1.5px solid rgba(54, 83, 67, 0.4);
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: inherit;
+    line-height: 1;
+    white-space: nowrap;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    flex-shrink: 0;
+}
+
+.rtl-toggle-btn:hover {
+    background: var(--sage);
+    color: #ffffff;
+    border-color: var(--sage);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(54, 83, 67, 0.2);
+}
+
+.portal-rtl-btn {
+    margin-right: 8px;
+}
+
+.floating-rtl-btn {
+    position: fixed;
+    bottom: 24px;
+    right: 128px;
+    z-index: 999;
+    box-shadow: var(--shadow);
+}
+
+/* 100% RTL Direction Layout Styles */
+html[dir="rtl"] body {
+    direction: rtl;
+    text-align: right;
+}
+
+html[dir="rtl"] .links {
+    direction: rtl;
+}
+
+html[dir="rtl"] .side {
+    direction: rtl;
+    text-align: right;
+    border-right: none;
+    border-left: 1px solid var(--line);
+}
+
+html[dir="rtl"] .side a {
+    text-align: right;
+}
+
+html[dir="rtl"] .portalTop {
+    direction: rtl;
+}
+
+html[dir="rtl"] .portalContent,
+html[dir="rtl"] .container,
+html[dir="rtl"] .heroGrid,
+html[dir="rtl"] .dash,
+html[dir="rtl"] .pCard,
+html[dir="rtl"] .welcome,
+html[dir="rtl"] .gridCard,
+html[dir="rtl"] .card,
+html[dir="rtl"] .metrics,
+html[dir="rtl"] .activity,
+html[dir="rtl"] form {
+    direction: rtl;
+    text-align: right;
+}
+
+html[dir="rtl"] th,
+html[dir="rtl"] td {
+    text-align: right;
+}
+
+[data-theme="dark"] .sideBottom .btn {
+    background: var(--cream) !important;
+    color: var(--ink) !important;
+    border: 1.5px solid rgba(154, 176, 163, 0.65) !important;
+}
+
+[data-theme="dark"] .btn.soft,
+[data-theme="dark"] .theme-toggle-btn,
+[data-theme="dark"] .rtl-toggle-btn,
+[data-theme="dark"] .hamb {
+    border: 1.5px solid rgba(154, 176, 163, 0.65) !important;
+}
+
+[data-theme="dark"] .btn.soft:hover,
+[data-theme="dark"] .theme-toggle-btn:hover,
+[data-theme="dark"] .rtl-toggle-btn:hover,
+[data-theme="dark"] .hamb:hover {
+    border-color: var(--sage-light) !important;
+    background: var(--sage) !important;
+    color: #ffffff !important;
+}
+
+[data-theme="dark"] .portal-tab {
+    background: var(--cream);
+    color: var(--muted);
+    border-color: var(--line);
+}
+
+[data-theme="dark"] .portal-tab.active {
+    background: var(--sage);
+    color: #ffffff;
+    border-color: var(--sage);
+}
+
+
 
 * {
     box-sizing: border-box;
@@ -251,19 +421,18 @@ img {
 .btn.soft {
     background: var(--cream);
     color: var(--ink);
-    border-color: var(--line);
+    border: 1.5px solid rgba(54, 83, 67, 0.4);
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
 }
 
 .btn.soft:hover {
-    background: var(--line);
+    background: var(--sage);
+    color: #ffffff;
+    border-color: var(--sage);
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 12px rgba(54, 83, 67, 0.2);
 }
 
-.toggle, .toggle-rtl {
-    display: none !important;
-}
 
 .hamb {
     height: 38px;
@@ -285,17 +454,11 @@ img {
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
 }
 
-.toggle:hover, .hamb:hover, .toggle-rtl:hover {
+.hamb:hover {
     border-color: var(--sage);
     color: var(--sage);
     transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(54, 83, 67, 0.15);
-}
-
-.toggle-rtl.active, .toggle.active {
-    background: var(--sage);
-    color: #ffffff;
-    border-color: var(--sage);
 }
 
 .hamb {
@@ -522,9 +685,6 @@ img {
     color: var(--sage);
 }
 
-[data-theme="dark"] .card-footer-note {
-    color: var(--sage-light);
-}
 
 .card:hover, .pCard:hover {
     transform: translateY(-4px);
@@ -562,11 +722,6 @@ img {
     display: block;
 }
 
-[data-theme="dark"] .icon {
-    background: linear-gradient(135deg, rgba(69, 107, 87, 0.25) 0%, rgba(224, 131, 98, 0.18) 100%);
-    color: var(--sage-light);
-    border-color: rgba(125, 163, 141, 0.25);
-}
 
 .card:hover .icon {
     transform: translateY(-2px) scale(1.08);
@@ -576,12 +731,6 @@ img {
     box-shadow: 0 6px 16px rgba(54, 83, 67, 0.22);
 }
 
-[data-theme="dark"] .card:hover .icon {
-    background: var(--terra);
-    color: #ffffff;
-    border-color: var(--terra);
-    box-shadow: 0 6px 16px rgba(224, 131, 98, 0.3);
-}
 
 .split {
     display: grid;
@@ -972,10 +1121,6 @@ textarea {
     padding-right: 42px;
 }
 
-[dir="rtl"] .password-field input {
-    padding-right: 14px;
-    padding-left: 42px;
-}
 
 .toggle-password {
     position: absolute;
@@ -992,10 +1137,6 @@ textarea {
     transition: color 0.2s ease;
 }
 
-[dir="rtl"] .toggle-password {
-    right: auto;
-    left: 10px;
-}
 
 .toggle-password:hover {
     color: var(--sage);
@@ -1106,10 +1247,6 @@ body.portal {
     transition: color 0.2s ease;
 }
 
-[dir="rtl"] .modal-close {
-    right: auto;
-    left: 18px;
-}
 
 .modal-close:hover {
     color: var(--ink);
@@ -1441,68 +1578,6 @@ body.portal {
     color: var(--ink);
 }
 
-[data-theme="dark"] .page-btn {
-    background: var(--card-bg);
-    border-color: var(--line);
-    color: var(--ink);
-}
-
-[data-theme="dark"] .page-btn:hover {
-    border-color: var(--sage-light);
-    color: var(--sage-light);
-}
-
-[data-theme="dark"] .page-btn.active {
-    background: var(--sage) !important;
-    color: #ffffff !important;
-    border-color: var(--sage) !important;
-}
-
-/* RTL Support */
-[dir="rtl"] {
-    direction: rtl;
-    text-align: right;
-}
-
-[dir="rtl"] .logo {
-    margin-right: 0;
-    margin-left: auto;
-}
-
-[dir="rtl"] .list li:before {
-    margin-right: 0;
-    margin-left: 10px;
-}
-
-[dir="rtl"] .stat {
-    border-right: 0;
-    border-left: 1px solid var(--line);
-}
-
-[dir="rtl"] .stat:last-child {
-    border-left: 0;
-}
-
-[dir="rtl"] .back-to-top {
-    right: auto;
-    left: 20px;
-}
-
-[dir="rtl"] .floating-whatsapp {
-    left: auto;
-    right: 20px;
-}
-
-[dir="rtl"] .feature-card {
-    align-items: flex-start;
-}
-
-[dir="rtl"] .top .in,
-[dir="rtl"] .head,
-[dir="rtl"] .welcome,
-[dir="rtl"] .portalTop {
-    flex-direction: row;
-}
 
 /* Portal Sub-Page UI Utilities */
 .portal-tabs {
@@ -1589,9 +1664,6 @@ body.portal {
     border-radius: 99px;
 }
 
-[dir="rtl"] .portal-table {
-    text-align: right;
-}
 
 .portal-table th {
     background: var(--cream);
@@ -1694,11 +1766,6 @@ body.portal {
     border-bottom-left-radius: 4px;
 }
 
-[dir="rtl"] .chat-bubble.received {
-    border-bottom-left-radius: 16px;
-    border-bottom-right-radius: 4px;
-}
-
 .chat-bubble.sent {
     align-self: flex-end;
     background: var(--sage);
@@ -1706,10 +1773,7 @@ body.portal {
     border-bottom-right-radius: 4px;
 }
 
-[dir="rtl"] .chat-bubble.sent {
-    border-bottom-right-radius: 16px;
-    border-bottom-left-radius: 4px;
-}
+
 
 .chat-time {
     font-size: 10.5px;
@@ -1855,10 +1919,6 @@ body.portal {
         display: block !important;
     }
 
-    [dir="rtl"] .side {
-        left: auto;
-        right: 0;
-    }
 
     .portalMenu {
         display: inline-flex;
@@ -2022,31 +2082,4 @@ body.portal {
     background: var(--sage-dark);
     transform: translateY(-2px);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-}
-
-[data-theme="dark"] .back-to-top {
-    background: var(--sage-dark);
-    color: #ffffff;
-    border-color: var(--sage-light);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
-}
-
-[data-theme="dark"] .back-to-top:hover {
-    background: var(--sage);
-}
-
-/* RTL Layout Support */
-html[dir="rtl"] {
-    direction: rtl;
-    text-align: right;
-}
-
-html[dir="rtl"] .nav-actions {
-    margin-right: auto;
-    margin-left: 0;
-}
-
-html[dir="rtl"] .back-to-top {
-    right: auto;
-    left: 24px;
 }
