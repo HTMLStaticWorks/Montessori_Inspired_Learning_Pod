@@ -524,11 +524,12 @@ img {
     overflow: hidden;
     border-radius: 24px;
     box-shadow: var(--shadow-hover);
-    aspect-ratio: 4/3;
+    aspect-ratio: 16/10;
     border: 3px solid var(--card-bg);
     transition: transform 0.3s ease;
     width: 100%;
-    max-height: 440px;
+    min-height: 380px;
+    max-height: 600px;
 }
 
 .photo:hover {
@@ -539,6 +540,20 @@ img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center 42%;
+}
+
+/* Image Positioning Utility Classes */
+.img-pos-top, .card-photo img.img-pos-top, .splitPhoto img.img-pos-top {
+    object-position: center 15% !important;
+}
+
+.img-pos-center, .card-photo img.img-pos-center, .splitPhoto img.img-pos-center {
+    object-position: center 45% !important;
+}
+
+.img-pos-bottom, .card-photo img.img-pos-bottom, .splitPhoto img.img-pos-bottom {
+    object-position: center 75% !important;
 }
 
 /* Feature Strip */
@@ -722,7 +737,10 @@ img {
 .card-photo {
     width: calc(100% + 48px);
     margin: -28px -24px 20px -24px;
-    height: 240px;
+    aspect-ratio: 16/10;
+    height: auto;
+    min-height: 280px;
+    max-height: 420px;
     overflow: hidden;
     border-top-left-radius: 19px;
     border-top-right-radius: 19px;
@@ -735,7 +753,7 @@ img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 18%;
+    object-position: center 42%;
     transition: transform 0.4s ease;
     display: block;
 }
@@ -748,9 +766,12 @@ img {
 
 .photoCard img {
     width: 100%;
-    height: 260px;
+    aspect-ratio: 16/10;
+    height: auto;
+    min-height: 280px;
+    max-height: 440px;
     object-fit: cover;
-    object-position: center 18%;
+    object-position: center 42%;
     display: block;
     border-radius: 19px 19px 0 0;
     transition: transform 0.4s ease;
@@ -773,9 +794,10 @@ img {
 }
 
 .tour-photo {
-    min-height: 300px;
-    max-height: 420px;
-    height: 340px;
+    min-height: 360px;
+    max-height: 600px;
+    aspect-ratio: 16/10;
+    height: auto;
     margin-top: 20px;
     border-radius: 20px;
     overflow: hidden;
@@ -786,7 +808,7 @@ img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 20%;
+    object-position: center 42%;
 }
 
 .card:hover .card-photo img {
@@ -877,8 +899,9 @@ img {
 
 .splitPhoto {
     min-height: 380px;
-    max-height: 460px;
-    height: 100%;
+    max-height: 650px;
+    aspect-ratio: 16/10;
+    height: auto;
     width: 100%;
     border-radius: 24px;
     overflow: hidden;
@@ -897,6 +920,7 @@ img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center 42%;
     display: block;
 }
 
@@ -1633,8 +1657,9 @@ body.portal {
 .photoCard img {
     display: block;
     width: 100%;
-    height: 230px;
+    height: 340px;
     object-fit: cover;
+    object-position: center 22%;
 }
 
 .photoCaption {
@@ -1924,6 +1949,36 @@ body.portal {
 }
 
 /* Responsive Rules for Tablet & Mobile (< 1024px) */
+@media(min-width: 600px) and (max-width: 1098px) {
+    .photo {
+        height: 480px;
+        max-height: 600px;
+        min-height: 360px;
+    }
+
+    .splitPhoto, .tour-photo {
+        min-height: 380px;
+        max-height: 600px;
+        height: 480px;
+        width: 100%;
+    }
+
+    .card-photo {
+        height: 300px;
+    }
+
+    .card-photo img {
+        object-fit: cover;
+        object-position: center 22%;
+    }
+
+    .photoCard img {
+        height: 320px;
+        object-fit: cover;
+        object-position: center 22%;
+    }
+}
+
 @media(max-width: 1024px) {
     .links {
         display: none;
@@ -1984,9 +2039,10 @@ body.portal {
     }
 
     .splitPhoto, .tour-photo {
-        min-height: 280px;
-        max-height: 400px;
-        height: 320px;
+        aspect-ratio: 16/10;
+        min-height: 340px;
+        max-height: 540px;
+        height: auto;
         width: 100%;
         border-radius: 20px;
         box-shadow: var(--shadow);
@@ -1996,23 +2052,29 @@ body.portal {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        object-position: center 35%;
+        object-position: center 42%;
         display: block;
     }
 
     .card-photo {
-        height: 230px;
+        aspect-ratio: 16/10;
+        height: auto;
+        min-height: 280px;
+        max-height: 440px;
     }
 
     .card-photo img {
         object-fit: cover;
-        object-position: center 18%;
+        object-position: center 42%;
     }
 
     .photoCard img {
-        height: 250px;
+        aspect-ratio: 16/10;
+        height: auto;
+        min-height: 280px;
+        max-height: 440px;
         object-fit: cover;
-        object-position: center 18%;
+        object-position: center 42%;
     }
 
     .quote {
@@ -2085,15 +2147,19 @@ body.portal {
     }
 
     .splitPhoto, .tour-photo {
-        min-height: 220px;
-        max-height: 300px;
-        height: 250px;
+        aspect-ratio: 16/10;
+        min-height: 300px;
+        max-height: 480px;
+        height: auto;
         width: 100%;
         border-radius: 18px;
     }
 
     .photo {
-        max-height: 320px;
+        aspect-ratio: 16/10;
+        min-height: 300px;
+        max-height: 480px;
+        height: auto;
         border-radius: 18px;
     }
 
@@ -2145,30 +2211,40 @@ body.portal {
     }
 
     .card-photo {
-        height: 210px;
+        aspect-ratio: 16/10;
+        height: auto;
+        min-height: 260px;
+        max-height: 400px;
     }
 
     .card-photo img {
-        object-position: center 18%;
+        object-position: center 42%;
     }
 
     .photoCard img {
-        height: 230px;
-        object-position: center 18%;
+        aspect-ratio: 16/10;
+        height: auto;
+        min-height: 260px;
+        max-height: 400px;
+        object-position: center 42%;
     }
 }
 
 @media(max-width: 480px) {
     .splitPhoto {
-        min-height: 170px;
-        max-height: 220px;
-        height: 195px;
+        aspect-ratio: 16/10;
+        min-height: 240px;
+        max-height: 380px;
+        height: auto;
         width: 100%;
         border-radius: 16px;
     }
 
     .photo {
-        max-height: 260px;
+        aspect-ratio: 16/10;
+        min-height: 240px;
+        max-height: 380px;
+        height: auto;
         border-radius: 16px;
     }
 
