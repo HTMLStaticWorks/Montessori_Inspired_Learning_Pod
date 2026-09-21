@@ -637,7 +637,7 @@ img {
     display: flex;
     justify-content: space-between;
     gap: 24px;
-    align-items: flex-end;
+    align-items: center;
     margin-bottom: 48px;
 }
 
@@ -647,13 +647,26 @@ img {
     font-size: 15px;
 }
 
+.head-centered,
+.head:has(> div:only-child) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.head-centered p,
+.head:has(> div:only-child) p {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .grid {
     display: grid;
     gap: 20px;
 }
 
 .g3 {
-    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
 }
 
 .g4 {
@@ -2083,7 +2096,7 @@ body.portal {
     }
 
     .g3 {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        grid-template-columns: repeat(3, 1fr);
     }
 
     .g4 {
