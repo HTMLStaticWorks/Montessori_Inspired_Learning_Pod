@@ -13,8 +13,11 @@
     };
   });
 
-  // Close mobile nav & portal sidebar when clicking outside
+  // Close mobile nav & portal sidebar when clicking outside (except theme/RTL toggles)
   document.addEventListener('click', (e) => {
+    if (e.target.closest('.theme-toggle-btn, .rtl-toggle-btn, [data-theme-toggle], [data-rtl-toggle]')) {
+      return;
+    }
     document.querySelectorAll('.links.is-open, .side.is-open').forEach(nav => {
       if (!nav.contains(e.target) && !e.target.closest('[data-menu], .portalMenu')) {
         nav.classList.remove('is-open');

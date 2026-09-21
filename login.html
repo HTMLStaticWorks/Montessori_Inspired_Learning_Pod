@@ -10,6 +10,10 @@
 
 </head>
 <body>
+    <div class="auth-top-actions">
+        <button type="button" class="rtl-toggle-btn" aria-label="Toggle layout direction">RTL</button>
+        <button type="button" class="theme-toggle-btn" aria-label="Toggle theme"></button>
+    </div>
     <div class="auth-wrapper">
         <div class="auth-card">
             <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
@@ -28,11 +32,11 @@
             <p style="color:var(--muted);font-size:14px;margin-bottom:20px;">Access your child's progress, work cycle updates, and school calendar.</p>
             <form class="form" onsubmit="event.preventDefault();location.href='dashboard.html'">
                 <label>Email Address
-                    <input type="email" required placeholder="name@example.com">
+                    <input type="email" required>
                 </label>
                 <label>Password
                     <div class="password-field">
-                        <input type="password" id="login-password" required placeholder="••••••••">
+                        <input type="password" id="login-password" required>
                         <button type="button" class="toggle-password" aria-label="Toggle password visibility" onclick="togglePasswordVisibility('login-password', this)">
                             <svg class="eye-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>

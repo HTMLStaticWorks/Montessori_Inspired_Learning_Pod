@@ -27,7 +27,8 @@
     updateThemeButtons(isDark);
   }
 
-  function toggleTheme() {
+  function toggleTheme(e) {
+    if (e && e.stopPropagation) e.stopPropagation();
     const current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
     const nextTheme = current === 'dark' ? 'light' : 'dark';
     localStorage.setItem(THEME_STORAGE_KEY, nextTheme);
@@ -62,7 +63,8 @@
     updateRTLButtons(isRTL);
   }
 
-  function toggleDirection() {
+  function toggleDirection(e) {
+    if (e && e.stopPropagation) e.stopPropagation();
     const current = document.documentElement.getAttribute('dir') === 'rtl' ? 'rtl' : 'ltr';
     const nextDir = current === 'rtl' ? 'ltr' : 'rtl';
     localStorage.setItem(DIR_STORAGE_KEY, nextDir);
