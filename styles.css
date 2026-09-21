@@ -653,7 +653,7 @@ img {
 }
 
 .g3 {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
 }
 
 .g4 {
@@ -739,8 +739,8 @@ img {
     margin: -28px -24px 20px -24px;
     aspect-ratio: 16/10;
     height: auto;
-    min-height: 280px;
-    max-height: 420px;
+    min-height: 160px;
+    max-height: 260px;
     overflow: hidden;
     border-top-left-radius: 19px;
     border-top-right-radius: 19px;
@@ -2059,8 +2059,8 @@ body.portal {
     .card-photo {
         aspect-ratio: 16/10;
         height: auto;
-        min-height: 280px;
-        max-height: 440px;
+        min-height: 160px;
+        max-height: 260px;
     }
 
     .card-photo img {
@@ -2071,8 +2071,8 @@ body.portal {
     .photoCard img {
         aspect-ratio: 16/10;
         height: auto;
-        min-height: 280px;
-        max-height: 440px;
+        min-height: 160px;
+        max-height: 260px;
         object-fit: cover;
         object-position: center 42%;
     }
@@ -2083,7 +2083,7 @@ body.portal {
     }
 
     .g3 {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     }
 
     .g4 {
@@ -2213,8 +2213,8 @@ body.portal {
     .card-photo {
         aspect-ratio: 16/10;
         height: auto;
-        min-height: 260px;
-        max-height: 400px;
+        min-height: 160px;
+        max-height: 260px;
     }
 
     .card-photo img {
@@ -2224,8 +2224,8 @@ body.portal {
     .photoCard img {
         aspect-ratio: 16/10;
         height: auto;
-        min-height: 260px;
-        max-height: 400px;
+        min-height: 160px;
+        max-height: 260px;
         object-position: center 42%;
     }
 }
