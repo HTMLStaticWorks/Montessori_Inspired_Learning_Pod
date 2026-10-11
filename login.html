@@ -11,28 +11,28 @@
 
 </head>
 
-<body>
-    <div class="auth-top-actions">
-        <button type="button" class="rtl-toggle-btn" aria-label="Toggle layout direction">RTL</button>
-        <button type="button" class="theme-toggle-btn" aria-label="Toggle theme"></button>
-    </div>
+<body class="auth-body">
     <div class="auth-wrapper">
+        <div class="auth-top-actions">
+            <button type="button" class="rtl-toggle-btn" aria-label="Toggle layout direction">RTL</button>
+            <button type="button" class="theme-toggle-btn" aria-label="Toggle theme"></button>
+        </div>
         <div class="auth-card">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
-                <a class="logo" href="index.html" style="margin:0;">
+            <div class="auth-brand-center" style="display:flex;justify-content:center;align-items:center;margin-bottom:16px;">
+                <a class="logo" href="index.html" style="margin:0 auto;justify-content:center;">
                     <img src="logo.png" alt="Little Oak Montessori" class="logo-img">
                     <span>LITTLE OAK<br><small>MONTESSORI</small></span>
                 </a>
-
             </div>
             <div class="auth-tabs">
                 <a href="login.html" class="auth-tab active">Log In</a>
                 <a href="signup.html" class="auth-tab">Sign Up</a>
             </div>
-            <div class="eyebrow">Parent & Family Access</div>
-            <h1 style="font-size:36px;margin:10px 0 16px;">Welcome back</h1>
-            <p style="color:var(--muted);font-size:14px;margin-bottom:20px;">Access your child's progress, work cycle
-                updates, and school calendar.</p>
+            <div class="auth-header-center" style="text-align:center;">
+                <div class="eyebrow" style="text-align:center;">Parent & Family Access</div>
+                <h1 style="font-size:36px;margin:10px 0 16px;text-align:center;">Welcome back</h1>
+                <p style="color:var(--muted);font-size:14px;margin-bottom:20px;text-align:center;">Access your child's progress, work cycle updates, and school calendar.</p>
+            </div>
             <form class="form" onsubmit="event.preventDefault();location.href='dashboard.html'">
                 <label>Email Address
                     <input type="email" required>
