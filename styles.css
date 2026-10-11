@@ -245,8 +245,8 @@ body {
     background: var(--paper);
     color: var(--ink);
     font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-    font-size: 15px;
-    line-height: 1.65;
+    font-size: 13.5px;
+    line-height: 1.55;
     transition: background-color 0.3s ease, color 0.3s ease;
     width: 100%;
     padding-top: 72px;
@@ -260,17 +260,23 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-    font-size: clamp(34px, 5vw, 62px);
-    letter-spacing: -0.02em;
+    font-size: clamp(27px, 3.2vw, 38px);
+    letter-spacing: -0.015em;
+    line-height: 1.2;
 }
 
 h2 {
-    font-size: clamp(26px, 3.5vw, 42px);
+    font-size: clamp(19px, 1.9vw, 24px);
     letter-spacing: -0.01em;
+    line-height: 1.28;
 }
 
 h3 {
-    font-size: clamp(18px, 2.2vw, 22px);
+    font-size: clamp(15px, 1.4vw, 18px);
+}
+
+h4 {
+    font-size: clamp(13.5px, 1.2vw, 15.5px);
 }
 
 a {
@@ -483,20 +489,29 @@ img {
     font-size: 18px;
 }
 
-/* Hero Section */
+/* Hero Section - Consistent Unified Height Across All Pages */
 .hero {
     background: var(--cream);
-    padding: 60px 0 45px;
+    padding: 42px 0;
     transition: background 0.3s ease;
     position: relative;
     overflow: hidden;
+    min-height: 440px;
+    display: flex;
+    align-items: center;
+}
+
+.hero .container {
+    width: min(1200px, calc(100% - 32px));
+    margin: 0 auto;
 }
 
 .heroGrid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 40px;
+    gap: 36px;
     align-items: center;
+    width: 100%;
 }
 
 .eyebrow {
@@ -510,11 +525,11 @@ img {
 }
 
 .hero p {
-    font-size: 17px;
+    font-size: 13.5px;
     color: var(--muted);
-    margin-top: 14px;
-    max-width: 560px;
-    line-height: 1.6;
+    margin-top: 10px;
+    max-width: 500px;
+    line-height: 1.5;
 }
 
 .actions {
@@ -526,14 +541,14 @@ img {
 
 .photo {
     overflow: hidden;
-    border-radius: 24px;
-    box-shadow: var(--shadow-hover);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    height: 350px;
+    max-height: 350px;
     aspect-ratio: 16/10;
-    border: 3px solid var(--card-bg);
+    border: 2.5px solid var(--card-bg);
     transition: transform 0.3s ease;
     width: 100%;
-    min-height: 380px;
-    max-height: 600px;
 }
 
 .photo:hover {
@@ -629,7 +644,7 @@ img {
 
 /* General Content Sections */
 .section {
-    padding: 85px 0;
+    padding: 48px 0;
 }
 
 .alt {
@@ -640,15 +655,16 @@ img {
 .head {
     display: flex;
     justify-content: space-between;
-    gap: 24px;
+    gap: 20px;
     align-items: center;
-    margin-bottom: 48px;
+    margin-bottom: 26px;
 }
 
 .head p {
-    max-width: 520px;
+    max-width: 480px;
     color: var(--muted);
-    font-size: 15px;
+    font-size: 13px;
+    line-height: 1.45;
 }
 
 .head-centered,
@@ -707,17 +723,17 @@ img {
 
 .card h3 {
     margin-top: 4px;
-    margin-bottom: 16px;
-    font-size: 24px;
+    margin-bottom: 8px;
+    font-size: 17px;
     line-height: 1.3;
     font-weight: 700;
 }
 
 .card p {
-    margin-bottom: 16px;
-    line-height: 1.65;
+    margin-bottom: 10px;
+    line-height: 1.5;
     color: var(--muted);
-    font-size: 15px;
+    font-size: 13px;
 }
 
 .card-features-list {
@@ -994,15 +1010,15 @@ img {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     border: 1px solid var(--line);
-    border-radius: 20px;
+    border-radius: 18px;
     background: var(--card-bg);
     overflow: hidden;
-    box-shadow: var(--shadow);
+    box-shadow: 0 4px 18px rgba(27, 40, 33, 0.04);
 }
 
 .stat {
     text-align: center;
-    padding: 30px 16px;
+    padding: 22px 16px;
     border-right: 1px solid var(--line);
 }
 
@@ -1013,13 +1029,14 @@ img {
 .stat strong {
     display: block;
     font-family: 'Playfair Display', Georgia, serif;
-    font-size: clamp(30px, 3.8vw, 42px);
+    font-size: clamp(24px, 2.5vw, 32px);
     color: var(--sage);
+    line-height: 1.15;
 }
 
 .stat span {
     color: var(--muted);
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 600;
     margin-top: 4px;
     display: block;
@@ -2346,4 +2363,2020 @@ body.portal {
     background: var(--sage-dark);
     transform: translateY(-2px);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+/* ==========================================================================
+   HOME PAGE 2 DISTINCT REDESIGN & LAYOUT SYSTEM
+   Distinctive architecture, inverted alignments, rich pod content & cards
+   ========================================================================== */
+
+/* 1. Distinctive Asymmetric Hero Section */
+.h2-hero {
+    position: relative;
+    padding: 42px 0;
+    overflow: hidden;
+    background: linear-gradient(175deg, rgba(242, 235, 224, 0.45) 0%, var(--paper) 100%);
+    border-bottom: 1px solid var(--line);
+    min-height: 440px;
+    display: flex;
+    align-items: center;
+}
+
+.h2-hero .container {
+    width: min(1200px, calc(100% - 32px));
+    margin: 0 auto;
+}
+
+[data-theme="dark"] .h2-hero {
+    background: linear-gradient(175deg, rgba(26, 37, 30, 0.5) 0%, var(--paper) 100%);
+}
+
+.h2-hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+    align-items: center;
+    width: 100%;
+}
+
+/* Hero Media on LEFT - Reversed Alignment from Home 1 */
+.h2-hero-media-col {
+    position: relative;
+}
+
+.h2-hero-media-wrap {
+    position: relative;
+    border-radius: 20px;
+    overflow: visible;
+    box-shadow: 0 14px 34px rgba(27, 40, 33, 0.1);
+}
+
+.h2-hero-img-frame {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.85);
+    background: var(--cream);
+    height: 350px;
+    max-height: 350px;
+    aspect-ratio: 16/10;
+}
+
+[data-theme="dark"] .h2-hero-img-frame {
+    border-color: rgba(54, 83, 67, 0.4);
+}
+
+.h2-hero-img-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.5s ease;
+}
+
+.h2-hero-media-wrap:hover .h2-hero-img-frame img {
+    transform: scale(1.02);
+}
+
+/* Floating Badges Overlaid on Hero */
+.h2-hero-badge-top {
+    position: absolute;
+    top: 14px;
+    left: -10px;
+    z-index: 2;
+    background: var(--card-bg);
+    border: 1px solid var(--line);
+    padding: 6px 12px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 6px 20px rgba(27, 40, 33, 0.1);
+    font-size: 11.5px;
+    font-weight: 700;
+    color: var(--sage);
+}
+
+.h2-hero-badge-bottom {
+    position: absolute;
+    bottom: -12px;
+    right: -10px;
+    z-index: 2;
+    background: var(--sage-dark);
+    color: #ffffff;
+    padding: 8px 14px;
+    border-radius: 14px;
+    box-shadow: 0 10px 24px rgba(27, 40, 33, 0.22);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    max-width: 230px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.h2-hero-badge-bottom .badge-time {
+    font-size: 9.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--gold);
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.h2-hero-badge-bottom .badge-title {
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+/* Hero Content on RIGHT */
+.h2-hero-content-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.h2-pill-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: rgba(54, 83, 67, 0.1);
+    color: var(--sage);
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    width: fit-content;
+    margin-bottom: 10px;
+}
+
+[data-theme="dark"] .h2-pill-tag {
+    background: rgba(124, 156, 137, 0.2);
+    color: var(--sage-light);
+}
+
+.h2-hero h1 {
+    font-size: clamp(26px, 3vw, 36px);
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+    margin-bottom: 8px;
+    color: var(--ink);
+    font-weight: 700;
+}
+
+.h2-hero-lead {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.h2-quick-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 16px;
+}
+
+.h2-quick-tag-item {
+    font-size: 11px;
+    font-weight: 600;
+    background: var(--cream);
+    color: var(--ink);
+    border: 1px solid var(--line);
+    padding: 3px 8px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.h2-enroll-ticker {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 14px;
+    padding: 6px 12px;
+    background: rgba(229, 169, 59, 0.12);
+    border: 1px solid rgba(229, 169, 59, 0.3);
+    border-radius: 10px;
+    font-size: 11.5px;
+    color: var(--ink);
+}
+
+.h2-pulse-dot {
+    width: 7px;
+    height: 7px;
+    background: #22c55e;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+/* Section Head Refinements for Home 2 */
+#home2-page .head h2,
+.h2-work-curve-section .head h2,
+#four-pillars-section .head h2,
+#communities-section .head h2,
+#facility-highlights-h2 .head h2,
+#parent-reviews-h2 .head h2,
+#faq-section-h2 .head h2,
+#admissions-pathway-h2 .head h2 {
+    font-size: clamp(18px, 1.8vw, 23px);
+    line-height: 1.28;
+    margin-bottom: 4px;
+}
+
+#home2-page .head p,
+.h2-work-curve-section .head p,
+#four-pillars-section .head p,
+#facility-highlights-h2 .head p,
+#parent-reviews-h2 .head p,
+#faq-section-h2 .head p,
+#admissions-pathway-h2 .head p {
+    font-size: 12.5px;
+    line-height: 1.45;
+    color: var(--muted);
+    max-width: 540px;
+}
+
+/* 2. Montessori Work Curve - Natural Biorhythm Navigator */
+.h2-work-curve-section {
+    padding: 42px 0;
+    background: var(--paper);
+    border-bottom: 1px solid var(--line);
+}
+
+.h2-curve-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-top: 22px;
+}
+
+.h2-curve-card {
+    background: var(--card-bg);
+    border: 1.5px solid var(--line);
+    border-radius: 16px;
+    padding: 18px 16px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: all 0.2s ease;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.02);
+}
+
+.h2-curve-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--sage);
+    box-shadow: 0 8px 20px rgba(54, 83, 67, 0.08);
+}
+
+.h2-curve-card.active-phase {
+    border-color: var(--sage);
+    background: linear-gradient(180deg, rgba(54, 83, 67, 0.04) 0%, var(--card-bg) 100%);
+}
+
+.h2-curve-phase-num {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--terra);
+    margin-bottom: 4px;
+}
+
+.h2-curve-time {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--sage);
+    background: rgba(54, 83, 67, 0.08);
+    padding: 2px 8px;
+    border-radius: 999px;
+    width: fit-content;
+    margin-bottom: 8px;
+}
+
+[data-theme="dark"] .h2-curve-time {
+    background: rgba(124, 156, 137, 0.18);
+    color: var(--sage-light);
+}
+
+.h2-curve-card h3 {
+    font-size: 15px;
+    line-height: 1.3;
+    margin-bottom: 6px;
+    font-weight: 700;
+}
+
+.h2-curve-card p {
+    font-size: 12.5px;
+    color: var(--muted);
+    line-height: 1.45;
+    margin-bottom: 10px;
+    flex-grow: 1;
+}
+
+.h2-curve-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    padding-top: 8px;
+    border-top: 1px dashed var(--line);
+}
+
+.h2-curve-tag {
+    font-size: 10.5px;
+    font-weight: 600;
+    background: var(--cream);
+    color: var(--ink);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* 3. Four Pillars 2x2 Matrix - Compact & Clean */
+.h2-pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    margin-top: 24px;
+}
+
+.h2-pillar-box {
+    background: var(--card-bg);
+    border: 1.5px solid var(--line);
+    border-radius: 18px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.02);
+}
+
+.h2-pillar-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
+}
+
+.h2-pillar-box.pillar-sage { border-top: 3px solid var(--sage); }
+.h2-pillar-box.pillar-terra { border-top: 3px solid var(--terra); }
+.h2-pillar-box.pillar-gold { border-top: 3px solid var(--gold); }
+.h2-pillar-box.pillar-forest { border-top: 3px solid var(--sage-dark); }
+
+.h2-pillar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.h2-pillar-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: var(--cream);
+    display: grid;
+    place-items: center;
+    color: var(--sage);
+}
+
+.h2-pillar-icon svg {
+    width: 18px;
+    height: 18px;
+    stroke: currentColor;
+    stroke-width: 2;
+}
+
+.h2-pillar-badge {
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 999px;
+    background: rgba(54, 83, 67, 0.1);
+    color: var(--sage);
+}
+
+.h2-pillar-box h3 {
+    font-size: 16px;
+    margin-bottom: 6px;
+    font-weight: 700;
+}
+
+.h2-pillar-box p {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.h2-materials-row {
+    margin-top: auto;
+    padding-top: 10px;
+    border-top: 1px dashed var(--line);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    font-size: 11.5px;
+}
+
+.h2-material-chip {
+    background: var(--cream);
+    color: var(--ink);
+    padding: 2px 7px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 11px;
+}
+
+/* 4. Inverted Split Section (Text on LEFT, Image on RIGHT) */
+.h2-split-reverse {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+    align-items: center;
+}
+
+.h2-split-reverse h2 {
+    font-size: clamp(18px, 1.8vw, 23px);
+    line-height: 1.26;
+    margin-bottom: 6px;
+}
+
+.h2-split-reverse p {
+    font-size: 12.5px;
+    color: var(--muted);
+    line-height: 1.45;
+    margin-bottom: 10px;
+}
+
+.h2-clean-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 14px;
+}
+
+.h2-clean-list li {
+    font-size: 12px;
+    line-height: 1.4;
+    color: var(--ink);
+}
+
+.h2-clean-list strong {
+    color: var(--sage);
+}
+
+.h2-split-photo-wrap {
+    position: relative;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(27, 40, 33, 0.1);
+}
+
+.h2-split-photo-frame {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.85);
+    background: var(--cream);
+    aspect-ratio: 4 / 3;
+}
+
+[data-theme="dark"] .h2-split-photo-frame {
+    border-color: rgba(54, 83, 67, 0.4);
+}
+
+.h2-split-photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.h2-photo-quote-card {
+    position: absolute;
+    bottom: -14px;
+    left: -10px;
+    background: var(--card-bg);
+    border: 1px solid var(--line);
+    padding: 10px 14px;
+    border-radius: 12px;
+    max-width: 250px;
+    box-shadow: 0 8px 22px rgba(27, 40, 33, 0.12);
+}
+
+.h2-photo-quote-card p {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 12px;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.4;
+    margin-bottom: 3px;
+}
+
+.h2-photo-quote-card small {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--sage);
+    text-transform: uppercase;
+    display: block;
+}
+
+/* 5. Age Communities Compact Showcase */
+.h2-communities-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 24px;
+}
+
+.h2-comm-card {
+    background: var(--card-bg);
+    border: 1.5px solid var(--line);
+    border-radius: 18px;
+    padding: 20px 18px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.2s ease;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.02);
+}
+
+.h2-comm-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--sage);
+}
+
+.h2-comm-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.h2-comm-age {
+    background: var(--sage);
+    color: #ffffff;
+    padding: 3px 9px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.h2-comm-ratio {
+    font-size: 10.5px;
+    font-weight: 700;
+    color: var(--terra);
+    background: rgba(217, 119, 87, 0.1);
+    padding: 2px 7px;
+    border-radius: 999px;
+}
+
+.h2-comm-card h3 {
+    font-size: 17px;
+    margin-bottom: 6px;
+    font-weight: 700;
+}
+
+.h2-comm-lead {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 12px;
+    flex-grow: 1;
+}
+
+.h2-comm-ideal {
+    margin-top: auto;
+    padding: 8px 10px;
+    background: var(--cream);
+    border-radius: 8px;
+    font-size: 11.5px;
+    color: var(--ink);
+    line-height: 1.4;
+}
+
+/* 6. Campus Architecture Compact Asymmetric Showcase */
+.h2-fac-asym-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 20px;
+    margin-top: 24px;
+    align-items: stretch;
+}
+
+.h2-fac-spotlight-card {
+    background: var(--card-bg);
+    border: 1.5px solid var(--line);
+    border-radius: 18px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.h2-fac-spotlight-photo {
+    height: 220px;
+    position: relative;
+    overflow: hidden;
+    background: var(--cream);
+}
+
+.h2-fac-spotlight-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom;
+}
+
+.h2-fac-spotlight-body {
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.h2-fac-spec-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 8px;
+}
+
+.h2-fac-spec-tag {
+    font-size: 10.5px;
+    font-weight: 700;
+    background: rgba(54, 83, 67, 0.1);
+    color: var(--sage);
+    padding: 2px 8px;
+    border-radius: 999px;
+}
+
+.h2-fac-spotlight-body h3 {
+    font-size: 18px;
+    margin-bottom: 6px;
+    font-weight: 700;
+}
+
+.h2-fac-spotlight-body p {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 8px;
+}
+
+.h2-fac-stack-col {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.h2-fac-mini-card {
+    background: var(--card-bg);
+    border: 1.5px solid var(--line);
+    border-radius: 16px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 120px 1fr;
+}
+
+.h2-fac-mini-photo {
+    height: 100%;
+    min-height: 110px;
+    position: relative;
+    overflow: hidden;
+}
+
+.h2-fac-mini-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.h2-fac-mini-body {
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.h2-fac-mini-body h4 {
+    font-size: 14.5px;
+    margin-bottom: 4px;
+    font-weight: 700;
+}
+
+.h2-fac-mini-body p {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.45;
+    margin-bottom: 4px;
+}
+
+.h2-fac-mini-tag {
+    font-size: 10.5px;
+    font-weight: 700;
+    color: var(--sage);
+}
+
+/* 7. Real Voices: Parent Testimonials */
+.h2-reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 24px;
+}
+
+.h2-review-card {
+    background: var(--card-bg);
+    border: 1.5px solid var(--line);
+    border-radius: 16px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+.h2-review-stars {
+    color: var(--gold);
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.h2-review-quote {
+    font-size: 13px;
+    color: var(--ink);
+    line-height: 1.5;
+    font-style: italic;
+    margin-bottom: 14px;
+    flex-grow: 1;
+}
+
+.h2-review-author {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-top: 10px;
+    border-top: 1px solid var(--line);
+}
+
+.h2-author-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--sage);
+    color: #ffffff;
+    display: grid;
+    place-items: center;
+    font-weight: 800;
+    font-size: 12px;
+    flex-shrink: 0;
+}
+
+.h2-author-info strong {
+    font-size: 12.5px;
+    color: var(--ink);
+    display: block;
+}
+
+.h2-author-info span {
+    font-size: 11px;
+    color: var(--muted);
+}
+
+/* 8. Parent Portal Feature Showcase */
+.h2-portal-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.h2-portal-feat-card {
+    background: var(--card-bg);
+    border: 1.5px solid var(--line);
+    border-radius: 12px;
+    padding: 14px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.h2-portal-feat-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: rgba(54, 83, 67, 0.1);
+    color: var(--sage);
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+}
+
+.h2-portal-feat-icon svg {
+    width: 16px;
+    height: 16px;
+}
+
+.h2-portal-feat-body h4 {
+    font-size: 13.5px;
+    margin-bottom: 2px;
+    font-weight: 700;
+}
+
+.h2-portal-feat-body p {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.4;
+}
+
+/* 9. Home 2 Refined Statistics System */
+.h2-stats-wrap {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background: var(--card-bg);
+    border: 1.5px solid var(--line);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 4px 18px rgba(27, 40, 33, 0.04);
+}
+
+.h2-stat-item {
+    padding: 24px 18px;
+    text-align: center;
+    border-right: 1px solid var(--line);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease;
+}
+
+.h2-stat-item:last-child {
+    border-right: none;
+}
+
+.h2-stat-item:hover {
+    background: rgba(54, 83, 67, 0.03);
+}
+
+.h2-stat-val {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(23px, 2.5vw, 30px);
+    font-weight: 700;
+    color: var(--sage);
+    line-height: 1.15;
+    margin-bottom: 4px;
+    display: block;
+}
+
+[data-theme="dark"] .h2-stat-val {
+    color: var(--sage-light);
+}
+
+.h2-stat-lbl {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 2px;
+    display: block;
+}
+
+.h2-stat-sub {
+    font-size: 11px;
+    color: var(--muted);
+    font-weight: 500;
+    display: block;
+}
+
+@media (max-width: 860px) {
+    .h2-stats-wrap {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .h2-stat-item:nth-child(2) {
+        border-right: none;
+    }
+    .h2-stat-item:nth-child(1),
+    .h2-stat-item:nth-child(2) {
+        border-bottom: 1px solid var(--line);
+    }
+}
+
+@media (max-width: 480px) {
+    .h2-stats-wrap {
+        grid-template-columns: 1fr;
+    }
+    .h2-stat-item {
+        border-right: none !important;
+        border-bottom: 1px solid var(--line);
+    }
+    .h2-stat-item:last-child {
+        border-bottom: none;
+    }
+}
+
+/* RTL Direction Adjustments */
+html[dir="rtl"] .h2-hero-grid,
+html[dir="rtl"] .h2-split-reverse {
+    direction: rtl;
+}
+
+html[dir="rtl"] .h2-hero-badge-top {
+    left: auto;
+    right: -10px;
+}
+
+html[dir="rtl"] .h2-hero-badge-bottom {
+    right: auto;
+    left: -10px;
+}
+
+html[dir="rtl"] .h2-photo-quote-card {
+    left: auto;
+    right: -10px;
+}
+
+html[dir="rtl"] .h2-fac-mini-card {
+    grid-template-columns: 1fr 120px;
+}
+
+/* Responsive Mobile & Tablet Rules */
+@media (max-width: 980px) {
+    .h2-hero-grid,
+    .h2-split-reverse {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .h2-curve-grid,
+    .h2-pillars-grid,
+    .h2-communities-grid,
+    .h2-reviews-grid,
+    .h2-portal-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .h2-fac-asym-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .h2-hero-badge-top,
+    .h2-hero-badge-bottom,
+    .h2-photo-quote-card {
+        position: static;
+        margin-top: 10px;
+        max-width: 100%;
+    }
+}
+
+/* ==========================================================================
+   NEW ENHANCEMENT COMPONENTS: MISSION, EDUCATORS, TIMINGS, ADMISSIONS, MAP
+   ========================================================================== */
+
+/* 1. Mission & Vision Grid */
+.mv-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.mv-card {
+    background: var(--card-bg);
+    border: 1.5px solid var(--line);
+    border-radius: 20px;
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 16px rgba(27, 40, 33, 0.03);
+    transition: all 0.25s ease;
+}
+
+.mv-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--sage);
+    box-shadow: 0 8px 24px rgba(54, 83, 67, 0.08);
+}
+
+.mv-card.mission { border-top: 4px solid var(--sage); }
+.mv-card.vision { border-top: 4px solid var(--terra); }
+
+.mv-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin-bottom: 14px;
+    background: var(--cream);
+    color: var(--sage);
+}
+
+.mv-card.vision .mv-icon {
+    color: var(--terra);
+}
+
+.mv-card h3 {
+    font-size: 19px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.mv-lead {
+    font-size: 13.5px;
+    color: var(--ink);
+    line-height: 1.55;
+    margin-bottom: 14px;
+    font-weight: 500;
+}
+
+.mv-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 14px;
+    border-top: 1px dashed var(--line);
+}
+
+.mv-list li {
+    font-size: 12.5px;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.mv-list li::before {
+    content: "✦";
+    color: var(--sage);
+    font-size: 11px;
+}
+
+/* 2. Meet the Educators Grid */
+.educators-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.educator-card {
+    background: var(--card-bg);
+    border: 1.5px solid var(--line);
+    border-radius: 18px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 14px rgba(27, 40, 33, 0.03);
+}
+
+.educator-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--sage);
+    box-shadow: 0 10px 26px rgba(54, 83, 67, 0.1);
+}
+
+.educator-photo {
+    height: 180px;
+    position: relative;
+    overflow: hidden;
+    background: var(--cream);
+}
+
+.educator-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 25%;
+    transition: transform 0.4s ease;
+}
+
+.educator-card:hover .educator-photo img {
+    transform: scale(1.04);
+}
+
+.educator-info {
+    padding: 16px 14px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.educator-role-badge {
+    font-size: 10.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--sage);
+    background: rgba(54, 83, 67, 0.08);
+    padding: 3px 8px;
+    border-radius: 999px;
+    width: fit-content;
+    margin-bottom: 6px;
+}
+
+.educator-info h3 {
+    font-size: 15.5px;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.educator-credentials {
+    font-size: 11.5px;
+    color: var(--terra);
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.educator-info p {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.45;
+    margin-bottom: 10px;
+    flex-grow: 1;
+}
+
+.educator-meta {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--ink);
+    padding-top: 8px;
+    border-top: 1px dashed var(--line);
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 3. Age Range & Session Timings Matrix */
+.timing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.timing-card {
+    background: var(--card-bg);
+    border: 1.5px solid var(--line);
+    border-radius: 18px;
+    padding: 22px 20px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 14px rgba(27, 40, 33, 0.03);
+}
+
+.timing-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--sage);
+}
+
+.timing-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.timing-badge {
+    font-size: 11px;
+    font-weight: 800;
+    padding: 3px 10px;
+    border-radius: 999px;
+    background: var(--sage);
+    color: #ffffff;
+}
+
+.timing-ratio {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--terra);
+    background: rgba(217, 119, 87, 0.1);
+    padding: 2px 8px;
+    border-radius: 999px;
+}
+
+.timing-card h3 {
+    font-size: 17px;
+    margin-bottom: 12px;
+}
+
+.timing-blocks {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+.timing-block {
+    background: var(--cream);
+    padding: 8px 12px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+}
+
+.timing-block strong {
+    color: var(--ink);
+}
+
+.timing-block span {
+    color: var(--sage);
+    font-weight: 700;
+}
+
+.timing-card p {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.45;
+}
+
+/* 4. Admissions Sections: Eligibility, Fees, Documents */
+.eligibility-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.eligibility-card {
+    background: var(--card-bg);
+    border: 1.5px solid var(--line);
+    border-radius: 18px;
+    padding: 22px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.eligibility-card h3 {
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+.eligibility-card .age-pill {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--sage);
+    background: rgba(54, 83, 67, 0.08);
+    padding: 2px 8px;
+    border-radius: 999px;
+    margin-bottom: 10px;
+    width: fit-content;
+}
+
+.eligibility-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 10px;
+}
+
+.eligibility-list li {
+    font-size: 12px;
+    color: var(--ink);
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    line-height: 1.4;
+}
+
+.eligibility-list li::before {
+    content: "✓";
+    color: var(--sage);
+    font-weight: 800;
+}
+
+.fee-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.fee-card {
+    background: var(--card-bg);
+    border: 1.5px solid var(--line);
+    border-radius: 18px;
+    padding: 24px 20px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-shadow: 0 4px 16px rgba(27, 40, 33, 0.03);
+}
+
+.fee-card.featured {
+    border-color: var(--sage);
+    box-shadow: 0 8px 24px rgba(54, 83, 67, 0.12);
+}
+
+.fee-popular-tag {
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    background: var(--terra);
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 2px 8px;
+    border-radius: 999px;
+}
+
+.fee-card h3 {
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.fee-age {
+    font-size: 11.5px;
+    color: var(--muted);
+    margin-bottom: 12px;
+}
+
+.fee-amount {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(24px, 2.5vw, 30px);
+    font-weight: 700;
+    color: var(--sage);
+    margin-bottom: 2px;
+}
+
+.fee-cycle {
+    font-size: 11px;
+    color: var(--muted);
+    margin-bottom: 14px;
+}
+
+.fee-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding-top: 12px;
+    border-top: 1px dashed var(--line);
+    margin-bottom: 16px;
+    flex-grow: 1;
+}
+
+.fee-features li {
+    font-size: 12px;
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.fee-features li::before {
+    content: "✦";
+    color: var(--sage);
+    font-size: 10px;
+}
+
+.docs-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.doc-card {
+    background: var(--card-bg);
+    border: 1.5px solid var(--line);
+    border-radius: 16px;
+    padding: 18px 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.doc-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: rgba(54, 83, 67, 0.08);
+    color: var(--sage);
+    display: grid;
+    place-items: center;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.doc-card h4 {
+    font-size: 13.5px;
+    margin-bottom: 4px;
+    font-weight: 700;
+}
+
+.doc-card p {
+    font-size: 11.5px;
+    color: var(--muted);
+    line-height: 1.4;
+}
+
+/* 5. Dedicated Facilities Showcases */
+.fac-showcase-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+    align-items: center;
+    margin-bottom: 44px;
+}
+
+.fac-showcase-item:last-child {
+    margin-bottom: 0;
+}
+
+.fac-showcase-item.reverse {
+    direction: rtl;
+}
+
+.fac-showcase-item.reverse > * {
+    direction: ltr;
+}
+
+.fac-showcase-photo {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(27, 40, 33, 0.08);
+    height: 280px;
+    background: var(--cream);
+    border: 2px solid var(--card-bg);
+}
+
+.fac-showcase-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.4s ease;
+}
+
+.fac-showcase-photo:hover img {
+    transform: scale(1.02);
+}
+
+.fac-showcase-content h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.fac-showcase-content p {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.55;
+    margin-bottom: 14px;
+}
+
+.fac-pill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.fac-pill {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--ink);
+    background: var(--cream);
+    border: 1px solid var(--line);
+    padding: 3px 9px;
+    border-radius: 999px;
+}
+
+/* 6. Dedicated Contact Map Section */
+.map-section {
+    background: var(--paper);
+    padding: 44px 0;
+    border-top: 1px solid var(--line);
+}
+
+.map-layout {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 28px;
+    align-items: stretch;
+}
+
+.map-frame-box {
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1.5px solid var(--line);
+    box-shadow: 0 6px 20px rgba(27, 40, 33, 0.06);
+    height: 380px;
+    background: var(--cream);
+    position: relative;
+}
+
+.map-frame-box iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+}
+
+.map-details-card {
+    background: var(--card-bg);
+    border: 1.5px solid var(--line);
+    border-radius: 20px;
+    padding: 24px 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(27, 40, 33, 0.04);
+}
+
+.map-details-card h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.map-info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 14px;
+    font-size: 12.5px;
+    color: var(--ink);
+}
+
+.map-info-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    background: rgba(54, 83, 67, 0.08);
+    color: var(--sage);
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    font-size: 13px;
+}
+
+/* ========================================================
+   NON-IMAGE INNER PAGE HERO ARCHITECTURE
+   (about, programs, admissions, facilities, contact, gallery)
+   Home 1 and Home 2 exclusively retain hero photography.
+   ======================================================== */
+
+.hero-inner-wrap {
+    width: 100%;
+    max-width: 1020px;
+    margin: 0 auto;
+}
+
+.hero-inner-centered {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-inner-centered h1 {
+    font-size: clamp(27px, 3.2vw, 38px);
+    line-height: 1.2;
+    margin-bottom: 10px;
+    max-width: 780px;
+}
+
+.hero-inner-centered .hero-lead {
+    font-size: 13.5px;
+    color: var(--muted);
+    max-width: 640px;
+    line-height: 1.55;
+    margin: 0 auto 16px;
+}
+
+.hero-inner-centered .actions {
+    justify-content: center;
+    margin-top: 18px;
+}
+
+/* 1. ABOUT HERO: Heritage & Pedagogy */
+.hero-about {
+    background: linear-gradient(135deg, var(--cream) 0%, rgba(54, 83, 67, 0.05) 100%);
+    padding: 44px 0;
+}
+
+.about-hero-quote-box {
+    background: var(--card-bg);
+    border: 1.5px solid var(--line);
+    border-radius: 16px;
+    padding: 16px 22px;
+    max-width: 680px;
+    margin: 14px auto 0;
+    box-shadow: 0 4px 16px rgba(27, 40, 33, 0.04);
+    position: relative;
+    text-align: left;
+}
+
+.about-hero-quote-box .quote-mark {
+    font-size: 28px;
+    color: var(--terra);
+    line-height: 1;
+    font-weight: 800;
+    display: block;
+    margin-bottom: 2px;
+}
+
+.about-hero-quote-box .quote-text {
+    font-size: 12.5px;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.5;
+    margin-bottom: 6px;
+}
+
+.about-hero-quote-box .quote-author {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--sage);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    display: block;
+}
+
+.about-pillars-pills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 14px;
+}
+
+.about-pillar-pill {
+    background: rgba(54, 83, 67, 0.08);
+    color: var(--sage);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(54, 83, 67, 0.15);
+}
+
+/* 2. PROGRAMS HERO: 3-Plane Developmental Matrix */
+.hero-programs {
+    background: linear-gradient(135deg, var(--cream) 0%, rgba(229, 169, 59, 0.06) 100%);
+    padding: 44px 0;
+}
+
+.programs-hero-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.program-hero-card {
+    background: var(--card-bg);
+    border: 1.5px solid var(--line);
+    border-radius: 16px;
+    padding: 18px 16px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    transition: all 0.2s ease;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.02);
+}
+
+.program-hero-card:hover {
+    border-color: var(--sage);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(54, 83, 67, 0.08);
+}
+
+.program-hero-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.program-hero-age {
+    background: var(--sage);
+    color: #ffffff;
+    font-size: 10.5px;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 999px;
+}
+
+.program-hero-ratio {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--terra);
+}
+
+.program-hero-card h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: var(--ink);
+}
+
+.program-hero-card p {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.45;
+    margin-bottom: 10px;
+    flex-grow: 1;
+}
+
+.program-hero-card-footer {
+    padding-top: 8px;
+    border-top: 1px dashed var(--line);
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--sage);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* 3. ADMISSIONS HERO: 4-Step Pathway Board */
+.hero-admissions {
+    background: linear-gradient(135deg, var(--cream) 0%, rgba(54, 83, 67, 0.06) 100%);
+    padding: 44px 0;
+}
+
+.admissions-live-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(34, 197, 94, 0.1);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    color: var(--ink);
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.admissions-live-pill .pulse-indicator {
+    width: 7px;
+    height: 7px;
+    background: #16a34a;
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.2);
+}
+
+.admissions-pathway-hero {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.pathway-hero-card {
+    background: var(--card-bg);
+    border: 1.5px solid var(--line);
+    border-radius: 14px;
+    padding: 14px 12px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    position: relative;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+}
+
+.pathway-hero-card.highlight {
+    border-color: var(--sage);
+    background: linear-gradient(180deg, rgba(54, 83, 67, 0.05) 0%, var(--card-bg) 100%);
+}
+
+.pathway-hero-num {
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--terra);
+    margin-bottom: 4px;
+}
+
+.pathway-hero-card h4 {
+    font-size: 13.5px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: var(--ink);
+}
+
+.pathway-hero-card p {
+    font-size: 11.5px;
+    color: var(--muted);
+    line-height: 1.4;
+    margin: 0;
+}
+
+.admissions-tour-notice {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 14px;
+    padding: 6px 14px;
+    background: rgba(229, 169, 59, 0.12);
+    border: 1px solid rgba(229, 169, 59, 0.3);
+    border-radius: 999px;
+    font-size: 11.5px;
+    font-weight: 600;
+    color: var(--ink);
+}
+
+/* 4. FACILITIES HERO: 4 Architecture Dimension Specs */
+.hero-facilities {
+    background: linear-gradient(135deg, var(--cream) 0%, rgba(54, 83, 67, 0.08) 100%);
+    padding: 44px 0;
+}
+
+.fac-hero-specs-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.fac-hero-spec-card {
+    background: var(--card-bg);
+    border: 1.5px solid var(--line);
+    border-radius: 14px;
+    padding: 16px 12px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    transition: all 0.2s ease;
+}
+
+.fac-hero-spec-card:hover {
+    border-color: var(--sage);
+    transform: translateY(-2px);
+}
+
+.fac-hero-spec-icon {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.fac-hero-spec-card h4 {
+    font-size: 13.5px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: var(--ink);
+}
+
+.fac-hero-spec-card p {
+    font-size: 11.5px;
+    color: var(--muted);
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* 5. CONTACT HERO: Direct Touchpoints Grid */
+.hero-contact {
+    background: linear-gradient(135deg, var(--cream) 0%, rgba(217, 119, 87, 0.06) 100%);
+    padding: 44px 0;
+}
+
+.contact-hero-touchpoints {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.contact-touchpoint-card {
+    text-decoration: none;
+    background: var(--card-bg);
+    border: 1.5px solid var(--line);
+    border-radius: 16px;
+    padding: 18px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    transition: all 0.2s ease;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.02);
+}
+
+.contact-touchpoint-card:hover {
+    border-color: var(--sage);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(54, 83, 67, 0.08);
+}
+
+.touchpoint-badge {
+    font-size: 9.5px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--terra);
+    margin-bottom: 4px;
+}
+
+.touchpoint-icon {
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.contact-touchpoint-card h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+
+.contact-touchpoint-card strong {
+    font-size: 12.5px;
+    color: var(--sage);
+    display: block;
+    margin-bottom: 4px;
+}
+
+.contact-touchpoint-card span {
+    font-size: 11.5px;
+    color: var(--muted);
+    line-height: 1.35;
+}
+
+/* 6. GALLERY HERO: Portfolio Filter Ribbon */
+.hero-gallery {
+    background: linear-gradient(135deg, var(--cream) 0%, rgba(54, 83, 67, 0.05) 100%);
+    padding: 44px 0;
+}
+
+.gallery-hero-categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 18px;
+}
+
+.gallery-cat-pill {
+    background: var(--card-bg);
+    border: 1.5px solid var(--line);
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 11.5px;
+    font-weight: 700;
+    color: var(--ink);
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.gallery-cat-pill:hover,
+.gallery-cat-pill.active {
+    background: var(--sage);
+    color: #ffffff;
+    border-color: var(--sage);
+}
+
+/* Responsive Rules for New Components */
+@media (max-width: 980px) {
+    .mv-grid,
+    .timing-grid,
+    .eligibility-grid,
+    .fee-grid,
+    .map-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .programs-hero-grid,
+    .admissions-pathway-hero,
+    .fac-hero-specs-grid,
+    .contact-hero-touchpoints {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .educators-grid,
+    .docs-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .fac-showcase-item,
+    .fac-showcase-item.reverse {
+        grid-template-columns: 1fr;
+        direction: ltr;
+    }
+}
+
+@media (max-width: 580px) {
+    .educators-grid,
+    .docs-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .photo,
+    .h2-hero-img-frame {
+        height: 240px;
+    }
 }

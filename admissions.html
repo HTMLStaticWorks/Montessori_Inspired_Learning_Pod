@@ -27,33 +27,61 @@
                 <a href="gallery.html" id="nav-gallery">Gallery</a>
                 <a href="admissions.html" class="active" id="nav-admissions">Admissions</a>
                 <a href="contact.html" id="nav-contact">Contact</a>
-                <a href="dashboard.html" class="nav-mobile-only" id="nav-portal-mob">Parent Portal</a>
                 <a href="login.html" class="nav-mobile-only soft" id="nav-login-mob">Login</a>
+                <a href="dashboard.html" class="nav-mobile-only" id="nav-portal-mob">Parent Portal</a>
             </nav>
             <div class="nav-actions">
-                <a class="btn" href="dashboard.html" id="btn-parent-portal">Parent Portal</a>
                 <a class="btn soft" href="login.html" id="btn-login">Login</a>
+                <a class="btn" href="dashboard.html" id="btn-parent-portal">Parent Portal</a>
                 <button class="hamb" data-menu="#nav" id="btn-mobile-hamburger"
                     aria-label="Toggle Navigation">☰</button>
             </div>
         </div>
     </header>
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container heroGrid">
-            <div>
-                <div class="eyebrow">Admissions 2026–27</div>
-                <h1>Begin your family's Montessori journey.</h1>
-                <p>We welcome curious young learners and engaged families. Learn about our simple step-by-step
-                    admissions process, observation visits, and cohort availability.</p>
-                <div class="actions">
-                    <a class="btn" href="#admissions-form-section">Schedule Campus Tour</a>
-                    <a class="btn soft" href="contact.html">Contact Admissions Team</a>
+    <!-- Dedicated Non-Image Hero: 4-Step Admissions Pathway Board -->
+    <section class="hero hero-admissions">
+        <div class="container hero-inner-wrap hero-inner-centered">
+            <div class="admissions-live-pill">
+                <span class="pulse-indicator"></span>
+                <span>2026–2027 Cohort Admissions Open • Limited Intakes</span>
+            </div>
+            <h1>Begin your family's Montessori journey.</h1>
+            <p class="hero-lead">We welcome curious young learners and engaged families. Our gentle 4-stage enrollment process ensures a respectful, harmonious fit between family values and the Montessori classroom.</p>
+
+            <!-- 4-Step Pathway Board directly in Hero -->
+            <div class="admissions-pathway-hero">
+                <div class="pathway-hero-card">
+                    <span class="pathway-hero-num">STEP 01</span>
+                    <h4>Online Inquiry</h4>
+                    <p>Submit basic family & child background details via our simple form.</p>
+                </div>
+                <div class="pathway-hero-card">
+                    <span class="pathway-hero-num">STEP 02</span>
+                    <h4>Classroom Tour</h4>
+                    <p>Adults-only observation during active morning Montessori work cycle.</p>
+                </div>
+                <div class="pathway-hero-card">
+                    <span class="pathway-hero-num">STEP 03</span>
+                    <h4>Child Visit</h4>
+                    <p>Gentle 30-minute classroom orientation and guide interaction.</p>
+                </div>
+                <div class="pathway-hero-card highlight">
+                    <span class="pathway-hero-num">STEP 04</span>
+                    <h4>Enrollment</h4>
+                    <p>Registration finalization, family handbook & welcome packet.</p>
                 </div>
             </div>
-            <div class="photo"><img
-                    src="https://images.pexels.com/photos/3933276/pexels-photo-3933276.jpeg?auto=compress&cs=tinysrgb&w=1600&h=1098&fit=crop"
-                    alt="Welcoming teacher and happy child at Little Oak Montessori"></div>
+
+            <div class="admissions-tour-notice">
+                <span>🗓️ Observation Tours Held Every Tuesday & Thursday at 9:15 AM</span>
+                <span>•</span>
+                <span>Visitor Parking Bay Gate B</span>
+            </div>
+
+            <div class="actions">
+                <a class="btn" href="#admissions-form-section">Schedule Campus Tour</a>
+                <a class="btn soft" href="#fees-section">View Tuition & Fee Schedule ↓</a>
+            </div>
         </div>
     </section>
 
@@ -93,25 +121,228 @@
         </div>
     </section>
 
-    <!-- Admissions Criteria & Policy Section -->
-    <section class="section alt" id="admissions-form-section">
-        <div class="container split">
-            <div>
-                <div class="eyebrow">School-Family Alliance</div>
-                <h2>Admissions philosophy & guidelines.</h2>
-                <p>We maintain balanced multi-age classrooms to ensure optimal peer mentoring and individualized guide
-                    attention.</p>
-                <ul class="list">
-                    <li>Rolling admissions for Toddler Community (ages 1.5 – 3)</li>
-                    <li>Main entry intake in August/September for Casa & Elementary</li>
-                    <li>Priority placement for siblings & returning pod families</li>
-                    <li>Transparent tuition schedules with zero hidden charges</li>
-                </ul>
-                <a class="btn soft" href="contact.html">Request Tuition Brochure →</a>
+    <!-- Eligibility & Age Groups Section -->
+    <section class="section alt" id="eligibility-section">
+        <div class="container">
+            <div class="head">
+                <div>
+                    <span class="eyebrow">Cohort Readiness</span>
+                    <h2>Eligibility & Age Groups</h2>
+                </div>
+                <p>We welcome children according to developmental planes, sensitive readiness, and social readiness.</p>
             </div>
-            <div class="splitPhoto"><img
-                    src="https://images.pexels.com/photos/3933279/pexels-photo-3933279.jpeg?auto=compress&cs=tinysrgb&w=1600&h=1098&fit=crop"
-                    alt="Montessori classroom group observation"></div>
+            <div class="eligibility-grid">
+                <div class="eligibility-card">
+                    <span class="age-pill">1.5 – 3 Years</span>
+                    <h3>Toddler Nest Eligibility</h3>
+                    <p style="font-size:12px;color:var(--muted);line-height:1.45;">For children beginning their journey outside the home with gross and fine motor curiosity.</p>
+                    <ul class="eligibility-list">
+                        <li>Independent walking and movement stability</li>
+                        <li>Showing early desire for self-feeding</li>
+                        <li>Gentle collaborative toilet learning readiness</li>
+                        <li>Comfort with small peer group settings</li>
+                    </ul>
+                </div>
+
+                <div class="eligibility-card">
+                    <span class="age-pill">3 – 6 Years</span>
+                    <h3>Casa Primary Eligibility</h3>
+                    <p style="font-size:12px;color:var(--muted);line-height:1.45;">The cornerstone 3-year Montessori cycle requiring sustained focus and community grace.</p>
+                    <ul class="eligibility-list">
+                        <li>Complete independent bathroom autonomy</li>
+                        <li>Ability to follow 2 to 3 step verbal directions</li>
+                        <li>Readiness for 3-hour morning work blocks</li>
+                        <li>Respect for shared materials and peers</li>
+                    </ul>
+                </div>
+
+                <div class="eligibility-card">
+                    <span class="age-pill">6 – 12 Years</span>
+                    <h3>Elementary Pod Eligibility</h3>
+                    <p style="font-size:12px;color:var(--muted);line-height:1.45;">For collaborative thinkers entering the second plane of development and cosmic education.</p>
+                    <ul class="eligibility-list">
+                        <li>Foundational phonetic reading & basic math</li>
+                        <li>Capacity for cooperative peer projects</li>
+                        <li>Prior Montessori experience or readiness review</li>
+                        <li>Curiosity for science, history & cosmic research</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Available Schedules Section -->
+    <section class="section" id="schedules-section">
+        <div class="container">
+            <div class="head">
+                <div>
+                    <span class="eyebrow">Daily Programs</span>
+                    <h2>Available Schedules</h2>
+                </div>
+                <p>Flexible schedule options tailored to family rhythms and child developmental needs.</p>
+            </div>
+            <div class="timing-grid">
+                <div class="timing-card">
+                    <div class="timing-header">
+                        <span class="timing-badge">Morning Half-Day</span>
+                        <span class="timing-ratio">8:45 AM – 12:15 PM</span>
+                    </div>
+                    <h3>Toddler & Early Casa</h3>
+                    <div class="timing-blocks">
+                        <div class="timing-block">
+                            <strong>Work Block:</strong>
+                            <span>Unbroken Morning Cycle</span>
+                        </div>
+                        <div class="timing-block">
+                            <strong>Snack Routine:</strong>
+                            <span>Organic Practical Life Snack</span>
+                        </div>
+                        <div class="timing-block">
+                            <strong>Schedule:</strong>
+                            <span>Mon – Fri (3 or 5 Days)</span>
+                        </div>
+                    </div>
+                    <p>Ideal for toddlers and younger 3-year-olds building stamina for school community life.</p>
+                </div>
+
+                <div class="timing-card">
+                    <div class="timing-header">
+                        <span class="timing-badge">Full-Day Montessori</span>
+                        <span class="timing-ratio">8:45 AM – 3:00 PM</span>
+                    </div>
+                    <h3>Casa Primary & Elementary</h3>
+                    <div class="timing-blocks">
+                        <div class="timing-block">
+                            <strong>Work Cycle:</strong>
+                            <span>Morning & Afternoon Blocks</span>
+                        </div>
+                        <div class="timing-block">
+                            <strong>Community Dining:</strong>
+                            <span>Linen Table Lunch Included</span>
+                        </div>
+                        <div class="timing-block">
+                            <strong>Schedule:</strong>
+                            <span>Mon – Fri (5 Full Days)</span>
+                        </div>
+                    </div>
+                    <p>Comprehensive Montessori immersion featuring botany gardens, atelier arts, and math mastery.</p>
+                </div>
+
+                <div class="timing-card">
+                    <div class="timing-header">
+                        <span class="timing-badge">Extended Day & Care</span>
+                        <span class="timing-ratio">7:45 AM – 5:30 PM</span>
+                    </div>
+                    <h3>All Enrolled Cohorts</h3>
+                    <div class="timing-blocks">
+                        <div class="timing-block">
+                            <strong>Early Drop-off:</strong>
+                            <span>7:45 AM – 8:45 AM</span>
+                        </div>
+                        <div class="timing-block">
+                            <strong>Late Aftercare:</strong>
+                            <span>3:00 PM – 5:30 PM</span>
+                        </div>
+                        <div class="timing-block">
+                            <strong>Activities:</strong>
+                            <span>Outdoor Games & Maker Nooks</span>
+                        </div>
+                    </div>
+                    <p>Carefully managed low-stimulus aftercare for working parents with healthy organic evening bites.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fees & Fee Enquiry Section -->
+    <section class="section alt" id="fees-section">
+        <div class="container">
+            <div class="head">
+                <div>
+                    <span class="eyebrow">Tuition Transparency</span>
+                    <h2>Fees & Fee Enquiry</h2>
+                </div>
+                <p>All-inclusive tuition covering Montessori wooden apparatus, organic meals, botany seeds, and atelier supplies with zero hidden fees.</p>
+            </div>
+            <div class="fee-grid">
+                <div class="fee-card">
+                    <h3>Toddler Nest</h3>
+                    <span class="fee-age">Ages 1.5 – 3 Years · 1:4 Low Ratio</span>
+                    <div class="fee-amount">$1,150</div>
+                    <span class="fee-cycle">Monthly Tuition (10-Month Academic Year)</span>
+                    <ul class="fee-features">
+                        <li>Morning 8:45 AM – 12:15 PM work block</li>
+                        <li>Daily organic snacks & fruit preparation</li>
+                        <li>Gentle toilet independence scaffolding</li>
+                        <li>Live daily parent portal photo updates</li>
+                    </ul>
+                    <a class="btn soft" href="contact.html">Inquire for Toddler →</a>
+                </div>
+
+                <div class="fee-card featured">
+                    <span class="fee-popular-tag">Most Popular</span>
+                    <h3>Casa Primary Full-Day</h3>
+                    <span class="fee-age">Ages 3 – 6 Years · 1:8 Ratio</span>
+                    <div class="fee-amount">$1,420</div>
+                    <span class="fee-cycle">Monthly Tuition (10-Month Academic Year)</span>
+                    <ul class="fee-features">
+                        <li>Full day 8:45 AM – 3:00 PM program</li>
+                        <li>Unbroken 3-hour morning work cycle</li>
+                        <li>Golden Beads arithmetic & phonetic reading</li>
+                        <li>Daily outdoor botany & atelier art studios</li>
+                    </ul>
+                    <a class="btn" href="contact.html">Inquire for Casa →</a>
+                </div>
+
+                <div class="fee-card">
+                    <h3>Elementary Pod</h3>
+                    <span class="fee-age">Ages 6 – 12 Years · 1:10 Ratio</span>
+                    <div class="fee-amount">$1,650</div>
+                    <span class="fee-cycle">Monthly Tuition (10-Month Academic Year)</span>
+                    <ul class="fee-features">
+                        <li>Full day 8:30 AM – 3:15 PM program</li>
+                        <li>Cosmic curriculum & student research expeditions</li>
+                        <li>Advanced geometry, physics & ecology labs</li>
+                        <li>Bilingual Spanish integration & community service</li>
+                    </ul>
+                    <a class="btn soft" href="contact.html">Inquire for Elementary →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Required Documents Checklist Section -->
+    <section class="section" id="required-documents-section">
+        <div class="container">
+            <div class="head">
+                <div>
+                    <span class="eyebrow">Checklist</span>
+                    <h2>Required Documents</h2>
+                </div>
+                <p>Please prepare the following documentation prior to step 4 of your family's enrollment orientation.</p>
+            </div>
+            <div class="docs-grid">
+                <div class="doc-card">
+                    <div class="doc-icon">📄</div>
+                    <h4>Birth Certificate</h4>
+                    <p>Official birth certificate copy verifying child's birth date and cohort age placement.</p>
+                </div>
+                <div class="doc-card">
+                    <div class="doc-icon">🩺</div>
+                    <h4>Health & Immunization</h4>
+                    <p>Up-to-date pediatric wellness examination report and state immunization clearance records.</p>
+                </div>
+                <div class="doc-card">
+                    <div class="doc-icon">📝</div>
+                    <h4>Development Questionnaire</h4>
+                    <p>Our completed family questionnaire detailing child's habits, interests, routines, and allergies.</p>
+                </div>
+                <div class="doc-card">
+                    <div class="doc-icon">🎓</div>
+                    <h4>Prior Records / Reports</h4>
+                    <p>Previous daycare or preschool progress evaluations if applying for Casa or Elementary (ages 4+).</p>
+                </div>
+            </div>
         </div>
     </section>
 

@@ -27,33 +27,70 @@
                 <a href="gallery.html" id="nav-gallery">Gallery</a>
                 <a href="admissions.html" id="nav-admissions">Admissions</a>
                 <a href="contact.html" id="nav-contact">Contact</a>
-                <a href="dashboard.html" class="nav-mobile-only" id="nav-portal-mob">Parent Portal</a>
                 <a href="login.html" class="nav-mobile-only soft" id="nav-login-mob">Login</a>
+                <a href="dashboard.html" class="nav-mobile-only" id="nav-portal-mob">Parent Portal</a>
             </nav>
             <div class="nav-actions">
-                <a class="btn" href="dashboard.html" id="btn-parent-portal">Parent Portal</a>
                 <a class="btn soft" href="login.html" id="btn-login">Login</a>
+                <a class="btn" href="dashboard.html" id="btn-parent-portal">Parent Portal</a>
                 <button class="hamb" data-menu="#nav" id="btn-mobile-hamburger"
                     aria-label="Toggle Navigation">☰</button>
             </div>
         </div>
     </header>
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container heroGrid">
-            <div>
-                <div class="eyebrow">Montessori Programs</div>
-                <h1>Tailored developmental pathways for ages 1.5 to 12.</h1>
-                <p>Discover our specialized Montessori environments engineered for specific developmental planes:
-                    Toddler Community, Primary / Casa, and Elementary Learning Pods.</p>
-                <div class="actions">
-                    <a class="btn" href="admissions.html">Book a Classroom Tour</a>
-                    <a class="btn soft" href="contact.html">Inquire About Programs</a>
-                </div>
+    <!-- Dedicated Non-Image Hero: 3-Plane Developmental Matrix -->
+    <section class="hero hero-programs">
+        <div class="container hero-inner-wrap hero-inner-centered">
+            <span class="eyebrow">Montessori Planes of Development</span>
+            <h1>Three tailored environments for ages 1.5 to 12.</h1>
+            <p class="hero-lead">Engineered around Dr. Montessori's natural stages of growth: multi-age peer mentoring, individualized learning speed, and 3-hour uninterrupted morning work cycles.</p>
+
+            <!-- 3 Developmental Plane Showcase Cards directly in Hero -->
+            <div class="programs-hero-grid">
+                <a href="#toddler-community" class="program-hero-card" style="text-decoration:none;">
+                    <div class="program-hero-card-header">
+                        <span class="program-hero-age">1.5 – 3 Years</span>
+                        <span class="program-hero-ratio">Ratio 1:4</span>
+                    </div>
+                    <h3>Toddler Nest</h3>
+                    <p>Gentle transition from home. Focus on fine motor coordination, spoken vocabulary, toilet independence, and purposeful movement.</p>
+                    <div class="program-hero-card-footer">
+                        <span>Morning Cycle: 8:45 – 11:30 AM</span>
+                        <span>Explore →</span>
+                    </div>
+                </a>
+
+                <a href="#casa-community" class="program-hero-card" style="text-decoration:none;">
+                    <div class="program-hero-card-header">
+                        <span class="program-hero-age">3 – 6 Years</span>
+                        <span class="program-hero-ratio">Ratio 1:8</span>
+                    </div>
+                    <h3>Casa Primary</h3>
+                    <p>The foundational Montessori plane. Practical life, sensorial geometry, phonetic reading, and decimal mathematics.</p>
+                    <div class="program-hero-card-footer">
+                        <span>Work Cycle: 8:45 AM – 12:30 PM</span>
+                        <span>Explore →</span>
+                    </div>
+                </a>
+
+                <a href="#elementary-community" class="program-hero-card" style="text-decoration:none;">
+                    <div class="program-hero-card-header">
+                        <span class="program-hero-age">6 – 12 Years</span>
+                        <span class="program-hero-ratio">Ratio 1:12</span>
+                    </div>
+                    <h3>Elementary Pod</h3>
+                    <p>Cosmic education: biology, world history, scientific experiments, advanced literature, collaborative research and ethics.</p>
+                    <div class="program-hero-card-footer">
+                        <span>Full Day: 8:45 AM – 3:00 PM</span>
+                        <span>Explore →</span>
+                    </div>
+                </a>
             </div>
-            <div class="photo"><img
-                    src="https://images.pexels.com/photos/8535594/pexels-photo-8535594.jpeg?auto=compress&cs=tinysrgb&w=1600&h=1098&fit=crop"
-                    alt="Children engaged in Montessori hands-on learning work"></div>
+
+            <div class="actions">
+                <a class="btn" href="admissions.html">Schedule an Observation Visit</a>
+                <a class="btn soft" href="#timings-section">View Session Timings & Routine ↓</a>
+            </div>
         </div>
     </section>
 
@@ -91,8 +128,91 @@
         </div>
     </section>
 
+    <!-- Age Range & Session Timings Section -->
+    <section class="section alt" id="timings-section">
+        <div class="container">
+            <div class="head">
+                <div>
+                    <span class="eyebrow">Operating Hours</span>
+                    <h2>Age Range & Session Timings</h2>
+                </div>
+                <p>Structured daily schedules aligned with natural developmental energy arcs and concentration spans.</p>
+            </div>
+            <div class="timing-grid">
+                <div class="timing-card">
+                    <div class="timing-header">
+                        <span class="timing-badge">1.5 – 3 Years</span>
+                        <span class="timing-ratio">1:4 Ratio</span>
+                    </div>
+                    <h3>Toddler Nest Community</h3>
+                    <div class="timing-blocks">
+                        <div class="timing-block">
+                            <strong>Morning Half-Day:</strong>
+                            <span>8:45 AM – 12:00 PM</span>
+                        </div>
+                        <div class="timing-block">
+                            <strong>Full-Day Program:</strong>
+                            <span>8:45 AM – 2:30 PM</span>
+                        </div>
+                        <div class="timing-block">
+                            <strong>Days Available:</strong>
+                            <span>3 or 5 Days / Wk</span>
+                        </div>
+                    </div>
+                    <p>Designed for gentle home-to-school transition with motor coordination, spoken language, and snack autonomy.</p>
+                </div>
+
+                <div class="timing-card">
+                    <div class="timing-header">
+                        <span class="timing-badge">3 – 6 Years</span>
+                        <span class="timing-ratio">1:8 Ratio</span>
+                    </div>
+                    <h3>Casa Primary Community</h3>
+                    <div class="timing-blocks">
+                        <div class="timing-block">
+                            <strong>Morning Work Block:</strong>
+                            <span>8:45 AM – 12:30 PM</span>
+                        </div>
+                        <div class="timing-block">
+                            <strong>Full Montessori Day:</strong>
+                            <span>8:45 AM – 3:00 PM</span>
+                        </div>
+                        <div class="timing-block">
+                            <strong>Days Available:</strong>
+                            <span>5 Full Days / Wk</span>
+                        </div>
+                    </div>
+                    <p>3-hour morning work block, sensorial math, phonetic literacy, botany, and family-style community dining.</p>
+                </div>
+
+                <div class="timing-card">
+                    <div class="timing-header">
+                        <span class="timing-badge">6 – 12 Years</span>
+                        <span class="timing-ratio">1:10 Ratio</span>
+                    </div>
+                    <h3>Elementary Research Pod</h3>
+                    <div class="timing-blocks">
+                        <div class="timing-block">
+                            <strong>Full Academic Day:</strong>
+                            <span>8:30 AM – 3:15 PM</span>
+                        </div>
+                        <div class="timing-block">
+                            <strong>Extended Studio Lab:</strong>
+                            <span>3:15 PM – 5:30 PM</span>
+                        </div>
+                        <div class="timing-block">
+                            <strong>Days Available:</strong>
+                            <span>5 Full Days / Wk</span>
+                        </div>
+                    </div>
+                    <p>Cosmic education research, advanced mathematics, cooperative group expeditions, and outdoor botany stewardship.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- The 5 Learning Areas Section -->
-    <section class="section alt">
+    <section class="section">
         <div class="container split">
             <div>
                 <div class="eyebrow">Curriculum Journey</div>

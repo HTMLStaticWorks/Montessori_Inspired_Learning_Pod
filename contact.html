@@ -27,31 +27,54 @@
                 <a href="gallery.html" id="nav-gallery">Gallery</a>
                 <a href="admissions.html" id="nav-admissions">Admissions</a>
                 <a href="contact.html" class="active" id="nav-contact">Contact</a>
-                <a href="dashboard.html" class="nav-mobile-only" id="nav-portal-mob">Parent Portal</a>
                 <a href="login.html" class="nav-mobile-only soft" id="nav-login-mob">Login</a>
+                <a href="dashboard.html" class="nav-mobile-only" id="nav-portal-mob">Parent Portal</a>
             </nav>
             <div class="nav-actions">
-                <a class="btn" href="dashboard.html" id="btn-parent-portal">Parent Portal</a>
                 <a class="btn soft" href="login.html" id="btn-login">Login</a>
+                <a class="btn" href="dashboard.html" id="btn-parent-portal">Parent Portal</a>
                 <button class="hamb" data-menu="#nav" id="btn-mobile-hamburger" aria-label="Toggle Navigation">☰</button>
             </div>
         </div>
     </header>
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container heroGrid">
-            <div>
-                <div class="eyebrow">Connect With Us</div>
-                <h1>We'd love to welcome your family.</h1>
-                <p>Have questions about enrollment, campus observation visits, or Montessori pedagogy? Reach out to our admissions team or stop by for a morning coffee tour.</p>
-                <div class="actions">
-                    <a class="btn" href="#contact-inquiry-form">Send Us a Message</a>
-                    <a class="btn soft" href="tel:+15552345678">Call Admissions Office</a>
-                </div>
+    <!-- Dedicated Non-Image Hero: Direct Touchpoints Concierge -->
+    <section class="hero hero-contact">
+        <div class="container hero-inner-wrap hero-inner-centered">
+            <span class="eyebrow">Admissions & Campus Concierge</span>
+            <h1>We'd love to welcome your family.</h1>
+            <p class="hero-lead">Whether scheduling an initial classroom observation, asking about developmental readiness, or connecting with our admissions team — we are here to support your journey.</p>
+
+            <!-- 3 Direct Touchpoint Cards in Hero -->
+            <div class="contact-hero-touchpoints">
+                <a href="tel:+15552345678" class="contact-touchpoint-card">
+                    <span class="touchpoint-badge">Immediate Assistance</span>
+                    <span class="touchpoint-icon">📞</span>
+                    <h4>Direct Telephone</h4>
+                    <strong>+1 (555) 234-5678</strong>
+                    <span>Mon–Fri: 8:00 AM – 4:30 PM EST</span>
+                </a>
+
+                <a href="mailto:admissions@littleoakmontessori.org" class="contact-touchpoint-card">
+                    <span class="touchpoint-badge">Inquiry Inbox</span>
+                    <span class="touchpoint-icon">✉️</span>
+                    <h4>Admissions Email</h4>
+                    <strong>admissions@littleoak...</strong>
+                    <span>Responses within 24 business hours</span>
+                </a>
+
+                <a href="#campus-location-map" class="contact-touchpoint-card">
+                    <span class="touchpoint-badge">Physical Campus</span>
+                    <span class="touchpoint-icon">📍</span>
+                    <h4>Campus Address</h4>
+                    <strong>142 Oakridge Meadow Way</strong>
+                    <span>Education District · Free visitor bays</span>
+                </a>
             </div>
-            <div class="photo"><img
-                    src="https://images.pexels.com/photos/34526427/pexels-photo-34526427.jpeg?auto=compress&cs=tinysrgb&w=1600&h=1098&fit=crop"
-                    alt="Little Oak Montessori welcome front desk and peaceful entrance"></div>
+
+            <div class="actions">
+                <a class="btn" href="#contact-inquiry-form">Send Us a Message ↓</a>
+                <a class="btn soft" href="#campus-location-map">View Map & Visitor Directions ↓</a>
+            </div>
         </div>
     </section>
 
@@ -153,6 +176,66 @@
             </div>
         </div>
     </section>
+
+    <!-- Dedicated Interactive Map & Campus Location Section -->
+    <section class="map-section" id="campus-location-map">
+        <div class="container">
+            <div class="head">
+                <div>
+                    <div class="eyebrow">Find Our Pod</div>
+                    <h2>Campus Location & Directions</h2>
+                </div>
+                <p>Located in a tranquil green pocket with dedicated pick-up bays and safe pedestrian walkways.</p>
+            </div>
+            <div class="map-layout">
+                <div class="map-frame-box">
+                    <iframe 
+                        title="Little Oak Montessori Campus Map" 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.875249539665!2d-73.97491862347144!3d40.78310323438318!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2588f046ee661%3A0xa0b3281fce00869!2sCentral%20Park%20West%2C%20New%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1715000000000!5m2!1sen!2sus" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <div class="map-details-card">
+                    <div class="eyebrow" style="margin-bottom:6px;">Easy Access</div>
+                    <h3>Visiting Our Pod</h3>
+                    <div class="map-info-item">
+                        <div class="map-info-icon">📍</div>
+                        <div>
+                            <strong>Physical Address</strong>
+                            <p style="margin:2px 0 0;color:var(--muted);font-size:12px;">142 Oakridge Meadow Way<br>Education District, NY 10024</p>
+                        </div>
+                    </div>
+                    <div class="map-info-item">
+                        <div class="map-info-icon">🚗</div>
+                        <div>
+                            <strong>Parking & Drop-Off</strong>
+                            <p style="margin:2px 0 0;color:var(--muted);font-size:12px;">Dedicated 15-minute visitor parking bays directly outside Main Gate B.</p>
+                        </div>
+                    </div>
+                    <div class="map-info-item">
+                        <div class="map-info-icon">🚇</div>
+                        <div>
+                            <strong>Transit Connections</strong>
+                            <p style="margin:2px 0 0;color:var(--muted);font-size:12px;">2 blocks from Meadow Park Subway (Lines B & C). Bus stop #14 directly opposite.</p>
+                        </div>
+                    </div>
+                    <div class="map-info-item">
+                        <div class="map-info-icon">⏰</div>
+                        <div>
+                            <strong>Front Desk Visiting Hours</strong>
+                            <p style="margin:2px 0 0;color:var(--muted);font-size:12px;">Monday – Friday: 8:00 AM – 4:30 PM (Scheduled tours at 9:15 AM)</p>
+                        </div>
+                    </div>
+                    <div style="margin-top:10px;">
+                        <a href="https://maps.google.com" target="_blank" rel="noopener" class="btn alt" style="width:100%;text-align:center;font-size:12px;padding:8px 14px;">Open in Google Maps ↗</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer class="footer" id="main-footer">
         <div class="container footerGrid">
             <div>

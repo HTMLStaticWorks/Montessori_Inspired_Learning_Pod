@@ -95,28 +95,48 @@
     // A. Main Site Header (.nav-actions)
     const navActions = document.querySelector('.nav-actions');
     if (navActions) {
-      if (!document.getElementById('theme-toggle-header')) {
-        const themeBtn = document.createElement('button');
+      const loginBtn = navActions.querySelector('#btn-login') || navActions.querySelector('.btn.soft');
+      const primaryBtn = navActions.querySelector('#btn-parent-portal') || navActions.querySelector('.btn:not(.soft)');
+      const hamb = navActions.querySelector('.hamb');
+
+      let themeBtn = document.getElementById('theme-toggle-header');
+      if (!themeBtn) {
+        themeBtn = document.createElement('button');
         themeBtn.id = 'theme-toggle-header';
         themeBtn.className = 'theme-toggle-btn';
         themeBtn.type = 'button';
         themeBtn.onclick = toggleTheme;
-        const hamb = navActions.querySelector('.hamb');
-        if (hamb) navActions.insertBefore(themeBtn, hamb);
-        else navActions.appendChild(themeBtn);
       }
 
-      if (!document.getElementById('rtl-toggle-header')) {
-        const rtlBtn = document.createElement('button');
+      let rtlBtn = document.getElementById('rtl-toggle-header');
+      if (!rtlBtn) {
+        rtlBtn = document.createElement('button');
         rtlBtn.id = 'rtl-toggle-header';
         rtlBtn.className = 'rtl-toggle-btn';
         rtlBtn.type = 'button';
         rtlBtn.onclick = toggleDirection;
-        const themeBtn = document.getElementById('theme-toggle-header');
-        if (themeBtn && themeBtn.nextSibling) {
-          navActions.insertBefore(rtlBtn, themeBtn.nextSibling);
+      }
+
+      // Consistent layout across all pages: (Theme Toggle) -> (RTL Toggle) -> [Login] -> [Parent Portal] -> [Hamburger]
+      const firstAction = loginBtn || primaryBtn || hamb;
+      if (firstAction) {
+        navActions.insertBefore(themeBtn, firstAction);
+        navActions.insertBefore(rtlBtn, firstAction);
+      } else {
+        navActions.appendChild(themeBtn);
+        navActions.appendChild(rtlBtn);
+      }
+
+      if (loginBtn && primaryBtn) {
+        navActions.insertBefore(loginBtn, primaryBtn);
+      }
+
+      // Ensure primary CTA button is always the last action button before hamburger
+      if (primaryBtn) {
+        if (hamb) {
+          navActions.insertBefore(primaryBtn, hamb);
         } else {
-          navActions.appendChild(rtlBtn);
+          navActions.appendChild(primaryBtn);
         }
       }
     }
