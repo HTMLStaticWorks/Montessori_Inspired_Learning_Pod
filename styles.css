@@ -2304,7 +2304,7 @@ body.portal {
         border-radius: 18px;
     }
 
-    .g3, .g4, .fgrid, .metrics, .timeline {
+    .g3, .g4, .fgrid, .metrics, .timeline, .contact-hero-touchpoints {
         grid-template-columns: 1fr;
     }
 
@@ -2595,11 +2595,17 @@ body.portal {
     gap: 36px;
     align-items: center;
     width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 /* Hero Media on LEFT - Reversed Alignment from Home 1 */
 .h2-hero-media-col {
     position: relative;
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .h2-hero-media-wrap {
@@ -2607,6 +2613,9 @@ body.portal {
     border-radius: 20px;
     overflow: visible;
     box-shadow: 0 14px 34px rgba(27, 40, 33, 0.1);
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .h2-hero-img-frame {
@@ -2615,9 +2624,12 @@ body.portal {
     overflow: hidden;
     border: 2px solid rgba(255, 255, 255, 0.85);
     background: var(--cream);
-    height: 350px;
-    max-height: 350px;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
     aspect-ratio: 16/10;
+    max-height: 380px;
+    box-sizing: border-box;
 }
 
 [data-theme="dark"] .h2-hero-img-frame {
@@ -2693,6 +2705,10 @@ body.portal {
 .h2-hero-content-col {
     display: flex;
     flex-direction: column;
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .h2-pill-tag {
@@ -2708,6 +2724,7 @@ body.portal {
     letter-spacing: 0.06em;
     text-transform: uppercase;
     width: fit-content;
+    max-width: 100%;
     margin-bottom: 10px;
 }
 
@@ -2717,12 +2734,14 @@ body.portal {
 }
 
 .h2-hero h1 {
-    font-size: clamp(26px, 3vw, 36px);
+    font-size: clamp(23px, 3vw, 36px);
     line-height: 1.2;
     letter-spacing: -0.015em;
     margin-bottom: 8px;
     color: var(--ink);
     font-weight: 700;
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
 .h2-hero-lead {
@@ -2730,6 +2749,9 @@ body.portal {
     color: var(--muted);
     line-height: 1.5;
     margin-bottom: 12px;
+    overflow-wrap: break-word;
+    word-break: normal;
+    max-width: 100%;
 }
 
 .h2-quick-tags {
@@ -2737,6 +2759,7 @@ body.portal {
     flex-wrap: wrap;
     gap: 6px;
     margin-bottom: 16px;
+    max-width: 100%;
 }
 
 .h2-quick-tag-item {
@@ -2750,6 +2773,8 @@ body.portal {
     display: inline-flex;
     align-items: center;
     gap: 4px;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .h2-enroll-ticker {
@@ -2763,6 +2788,14 @@ body.portal {
     border-radius: 10px;
     font-size: 11.5px;
     color: var(--ink);
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.h2-enroll-ticker > div:last-child {
+    min-width: 0;
+    overflow-wrap: break-word;
 }
 
 .h2-pulse-dot {
@@ -3513,6 +3546,26 @@ html[dir="rtl"] .h2-fac-mini-card {
         gap: 28px;
     }
 
+    .h2-hero-grid > *,
+    .h2-split-reverse > * {
+        min-width: 0;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .h2-hero-media-wrap {
+        box-shadow: none;
+    }
+
+    .h2-hero-img-frame {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        aspect-ratio: 16/10;
+        box-shadow: 0 10px 28px rgba(27, 40, 33, 0.1);
+    }
+
     .h2-curve-grid,
     .h2-pillars-grid,
     .h2-communities-grid,
@@ -3529,8 +3582,19 @@ html[dir="rtl"] .h2-fac-mini-card {
     .h2-hero-badge-bottom,
     .h2-photo-quote-card {
         position: static;
-        margin-top: 10px;
         max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .h2-hero-badge-top {
+        margin-top: 0;
+        margin-bottom: 10px;
+        display: inline-flex;
+    }
+
+    .h2-hero-badge-bottom {
+        margin-top: 10px;
+        width: 100%;
     }
 }
 
@@ -4567,14 +4631,43 @@ html[dir="rtl"] .h2-fac-mini-card {
     }
 }
 
+@media (max-width: 768px) {
+    .contact-hero-touchpoints,
+    .programs-hero-grid,
+    .admissions-pathway-hero,
+    .fac-hero-specs-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .h2-hero-img-frame {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        aspect-ratio: 16/10;
+        max-height: 320px;
+    }
+}
+
 @media (max-width: 580px) {
     .educators-grid,
-    .docs-grid {
+    .docs-grid,
+    .contact-hero-touchpoints,
+    .programs-hero-grid,
+    .admissions-pathway-hero,
+    .fac-hero-specs-grid {
         grid-template-columns: 1fr;
     }
 
-    .photo,
-    .h2-hero-img-frame {
+    .photo {
         height: 240px;
+    }
+
+    .h2-hero-img-frame {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        aspect-ratio: 16/10;
+        max-height: 260px;
     }
 }
